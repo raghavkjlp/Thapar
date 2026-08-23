@@ -43,7 +43,7 @@ function initQuantumCanvas() {
       vx: (Math.random() - 0.5) * 0.7,
       vy: (Math.random() - 0.5) * 0.7,
       radius: Math.random() * 2 + 1,
-      color: Math.random() > 0.5 ? '#00f2fe' : '#7f00ff'
+      color: Math.random() > 0.5 ? '#0284c7' : '#7c3aed'
     });
   }
 
@@ -71,7 +71,7 @@ function initQuantumCanvas() {
           ctx.beginPath();
           ctx.moveTo(n.x, n.y);
           ctx.lineTo(n2.x, n2.y);
-          ctx.strokeStyle = `rgba(0,242,254,${1 - dist / 130})`;
+          ctx.strokeStyle = `rgba(2,132,199,${(1 - dist / 130) * 0.35})`;
           ctx.lineWidth = 0.5;
           ctx.stroke();
         }
@@ -139,7 +139,7 @@ function initStatsCounter() {
    -------------------------------------------------------------------------- */
 function initNavigation() {
   const hamburger = document.getElementById('hamburger');
-  const navMenu   = document.getElementById('navMenu');
+  const navMenu = document.getElementById('navMenu');
   if (!hamburger || !navMenu) return;
 
   hamburger.addEventListener('click', () => {
@@ -154,29 +154,9 @@ function initNavigation() {
    5. Theme Toggle
    -------------------------------------------------------------------------- */
 function initThemeToggle() {
-  const btn = document.getElementById('themeToggle');
-  if (!btn) return;
-  const saved = localStorage.getItem('cs_theme') || 'dark';
-  if (saved === 'light') {
-    document.body.classList.add('light-theme');
-    document.body.classList.remove('dark-theme');
-    btn.innerHTML = '<i class="fa-solid fa-sun"></i>';
-  }
-  btn.addEventListener('click', () => {
-    const isLight = document.body.classList.contains('light-theme');
-    if (isLight) {
-      document.body.classList.remove('light-theme');
-      document.body.classList.add('dark-theme');
-      btn.innerHTML = '<i class="fa-solid fa-moon"></i>';
-      localStorage.setItem('cs_theme', 'dark');
-    } else {
-      document.body.classList.remove('dark-theme');
-      document.body.classList.add('light-theme');
-      btn.innerHTML = '<i class="fa-solid fa-sun"></i>';
-      localStorage.setItem('cs_theme', 'light');
-    }
-    showToast('Theme switched!', 'info');
-  });
+  document.body.classList.add('light-theme');
+  document.body.classList.remove('dark-theme');
+  localStorage.setItem('cs_theme', 'light');
 }
 
 /* --------------------------------------------------------------------------
@@ -191,7 +171,6 @@ function injectFooter() {
       <div class="footer-grid">
         <div class="footer-col brand-col">
           <div class="footer-brand">
-            <img src="images/cs_catalyst_logo.jpg" alt="CS-CATALYST Logo">
             <div><h3>CS-CATALYST</h3><p>CSE Dept · TIET Patiala</p></div>
           </div>
           <p class="footer-about">The official Computer Science &amp; Engineering departmental society at Thapar Institute of Engineering &amp; Technology, Patiala, driving FDPs, STCs, quantum workshops, and student leadership.</p>
@@ -210,21 +189,17 @@ function injectFooter() {
         <div class="footer-col">
           <h4>Faculty Leadership</h4>
           <div class="coord-mini-contact">
-            <p><strong>Mr. Neeraj Kumar</strong><br>Head of Department — CSE</p>
+            <p><strong>Prof. Neeraj Kumar</strong><br>Head of Department — CSE</p>
+            <p><strong>Dr. Seema Bawa</strong><br>Assistant Professor — CSE</p>
             <p><strong>Dr. Sandeep Verma</strong><br>Assistant Professor — CS-CATALYST Coordinator</p>
             <p><i class="fa-solid fa-building-columns"></i> Department of CSE, TIET, Patiala — 147004</p>
           </div>
         </div>
         <div class="footer-col">
           <h4>Contact</h4>
-          <p class="contact-info"><i class="fa-solid fa-location-dot"></i> Activity Space-2 / Academic Block, Thapar Institute, Patiala, Punjab — 147004</p>
-          <p class="contact-info"><i class="fa-solid fa-envelope"></i> cscatalyst@thapar.edu</p>
-          <div class="social-icons">
-            <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="#" title="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" title="GitHub"><i class="fa-brands fa-github"></i></a>
-          </div>
+          <p class="contact-info"><i class="fa-solid fa-location-dot"></i> CSE Department, Thapar Institute, Patiala, Punjab — 147004</p>
+          <p class="contact-info"><i class="fa-solid fa-envelope"></i> sandeep.verma@thapar.edu</p>
+
         </div>
       </div>
     </div>
@@ -235,8 +210,8 @@ function injectFooter() {
    7. Events Gallery Filter & Search (events.html)
    -------------------------------------------------------------------------- */
 function initEventFilters() {
-  const filterBtns  = document.querySelectorAll('.filter-btn');
-  const eventCards  = document.querySelectorAll('.event-card');
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const eventCards = document.querySelectorAll('.event-card');
   const searchInput = document.getElementById('eventSearchInput');
   if (!filterBtns.length) return;
 
@@ -264,7 +239,7 @@ function initEventFilters() {
    8. Responsibilities Accordion (apply.html)
    -------------------------------------------------------------------------- */
 function initResponsibilitiesToggle() {
-  const toggle  = document.getElementById('respToggle');
+  const toggle = document.getElementById('respToggle');
   const content = document.getElementById('respContent');
   if (!toggle || !content) return;
   toggle.addEventListener('click', () => {
@@ -279,8 +254,8 @@ function initResponsibilitiesToggle() {
    9. File Upload (apply.html)
    -------------------------------------------------------------------------- */
 function initFileUpload() {
-  const zone    = document.getElementById('fileDropZone');
-  const input   = document.getElementById('resumeFileInput');
+  const zone = document.getElementById('fileDropZone');
+  const input = document.getElementById('resumeFileInput');
   const display = document.getElementById('fileNameDisplay');
   if (!zone || !input) return;
 
@@ -294,7 +269,7 @@ function initFileUpload() {
   input.addEventListener('change', () => { if (input.files.length) handleFile(input.files[0]); });
 
   function handleFile(file) {
-    if (display) display.innerHTML = `<i class="fa-solid fa-file-pdf" style="color:#ff007f"></i> <strong>${file.name}</strong> (${(file.size/1024).toFixed(1)} KB)`;
+    if (display) display.innerHTML = `<i class="fa-solid fa-file-pdf" style="color:#ff007f"></i> <strong>${file.name}</strong> (${(file.size / 1024).toFixed(1)} KB)`;
     showToast(`Resume attached: ${file.name}`, 'success');
   }
 }
@@ -308,9 +283,9 @@ function initOrganizingPanelForm() {
 
   form.addEventListener('submit', e => {
     e.preventDefault();
-    const name     = document.getElementById('fullName').value.trim();
-    const terms    = document.getElementById('agreeTerms').checked;
-    const fileEl   = document.getElementById('resumeFileInput');
+    const name = document.getElementById('fullName').value.trim();
+    const terms = document.getElementById('agreeTerms').checked;
+    const fileEl = document.getElementById('resumeFileInput');
 
     if (!terms) { showToast('Please agree to the member responsibilities.', 'error'); return; }
     if (!fileEl?.files?.length) { showToast('Please attach your resume PDF.', 'error'); return; }
@@ -318,14 +293,14 @@ function initOrganizingPanelForm() {
     const ref = 'CSC-2026-' + Math.floor(10000 + Math.random() * 90000);
     const data = {
       ref, name,
-      roll:   document.getElementById('rollNo').value.trim(),
-      year:   document.getElementById('yearSemester').value,
-      email:  document.getElementById('emailAddr').value.trim(),
-      phone:  document.getElementById('phoneNo').value.trim(),
+      roll: document.getElementById('rollNo').value.trim(),
+      year: document.getElementById('yearSemester').value,
+      email: document.getElementById('emailAddr').value.trim(),
+      phone: document.getElementById('phoneNo').value.trim(),
       domain: document.getElementById('primaryDomain').value,
-      sop:    document.getElementById('sopText').value.trim(),
-      file:   fileEl.files[0].name,
-      at:     new Date().toISOString()
+      sop: document.getElementById('sopText').value.trim(),
+      file: fileEl.files[0].name,
+      at: new Date().toISOString()
     };
 
     const apps = JSON.parse(localStorage.getItem('cs_catalyst_applications') || '[]');
@@ -381,14 +356,15 @@ function handleQbitRegister(e) {
    12. Event Details Modal Database
    -------------------------------------------------------------------------- */
 const eventDatabase = {
-  'cloud-fdp':       { title: 'National FDP on Cloud Infrastructure & HPC Architectures', category: 'COMPLETED FDP', meta: 'May 14–18, 2026 · CSE Computer Lab 3', desc: '5-Day Faculty Development Program delivered by leading HPC researchers. Topics: Kubernetes, GPU acceleration, parallel MPI, cloud cost optimization.', highlights: ['50+ Faculty Delegates','10 Lab Practicals','IBM & NVIDIA Guest Speakers'] },
-  'llm-talk':        { title: 'Expert Seminar: Scaling Large Language Models', category: 'UPCOMING TALK', meta: 'Oct 12, 2026 · TIET Auditorium', desc: 'Keynote on LLM alignment, LoRA/QLoRA fine-tuning, RAG evaluation benchmarks, and ethical AI deployment at scale.', highlights: ['AI Industry Lead Keynote','Live Q&A Session','Certificate of Participation'] },
-  'stc-crypto':      { title: 'STC: Modern Cryptography & Zero-Trust Security', category: 'COMPLETED STC', meta: 'Mar 02–06, 2026 · Cyber Security Lab', desc: 'Hands-on STC on post-quantum cryptographic primitives, zero-knowledge proofs, blockchain privacy, and network forensics.', highlights: ['Hands-on CTF Challenge','ZK Proof Demos','100% Completion Rate'] },
-  'open-day':        { title: 'CSE Department Open Day & Innovation Expo', category: 'COMPLETED OPEN DAY', meta: 'Feb 18, 2026 · TIET Main Foyer', desc: 'Annual showcase featuring 120+ student projects, 15 industry judges, hardware demos, and innovation award ceremony.', highlights: ['120+ Projects Displayed','15 Industry Judges','Awards Ceremony'] },
-  'edge-stc':        { title: 'STC: Embedded Intelligence & Edge Computing', category: 'UPCOMING STC', meta: 'Nov 20–24, 2026 · IoT Innovation Lab', desc: 'Training on deploying compressed neural nets onto ARM Cortex boards, TinyML, and real-time IoT sensor inference.', highlights: ['Free Hardware Kit Provided','C++/Python Lab Sessions','Limited to 40 Seats'] },
-  'fdp-ai':          { title: 'FDP: AI Tools & Generative Models for Educators', category: 'COMPLETED FDP', meta: 'Jan 06–10, 2026 · Smart Classroom Block', desc: '5-day FDP on AI-assisted pedagogy, ChatGPT, GitHub Copilot, and prompt engineering for curriculum design.', highlights: ['40+ Faculty Attended','Live Demo Sessions','Curriculum Design Workshop'] },
-  'blockchain-talk': { title: 'Industry Talk: Decentralized Finance & Blockchain Security', category: 'COMPLETED SEMINAR', meta: 'Dec 04, 2025 · TIET Seminar Hall', desc: 'Keynote by fintech engineers on smart contracts, DeFi protocols, Web3 architecture, and regulatory compliance.', highlights: ['Industry Expert Keynote','Smart Contract Demo','Open Discussion Panel'] },
-  'stc-ds':          { title: 'STC: Applied Data Science & ML with Python', category: 'COMPLETED STC', meta: 'Nov 11–15, 2025 · Data Science Lab', desc: 'Intensive 5-day course on EDA, scikit-learn, XGBoost, model deployment with FastAPI, and MLOps fundamentals.', highlights: ['Hands-on Kaggle Competition','MLOps Pipeline Demo','FastAPI Deployment Lab'] }
+  'drone-fdp': { title: 'National FDP on UAVs & Autonomous Drone Technology', category: 'COMPLETED FDP', meta: 'June 15–19, 2026 · IoT & Robotics Lab', desc: '5-Day Faculty Development Program covering drone dynamics, autonomous flight control, payload systems, path planning, and hands-on drone pilot training.', highlights: ['Hands-on Pilot Training', 'Drone Assembly Lab', '35+ Faculty Participants'] },
+  'cloud-fdp': { title: 'National FDP on Cloud Infrastructure & HPC Architectures', category: 'COMPLETED FDP', meta: 'May 14–18, 2026 · CSE Computer Lab 3', desc: '5-Day Faculty Development Program delivered by leading HPC researchers. Topics: Kubernetes, GPU acceleration, parallel MPI, cloud cost optimization.', highlights: ['50+ Faculty Delegates', '10 Lab Practicals', 'IBM & NVIDIA Guest Speakers'] },
+  'llm-talk': { title: 'Expert Seminar: Scaling Large Language Models', category: 'UPCOMING TALK', meta: 'Oct 12, 2026 · TIET Auditorium', desc: 'Keynote on LLM alignment, LoRA/QLoRA fine-tuning, RAG evaluation benchmarks, and ethical AI deployment at scale.', highlights: ['AI Industry Lead Keynote', 'Live Q&A Session', 'Certificate of Participation'] },
+  'stc-crypto': { title: 'STC: Modern Cryptography & Zero-Trust Security', category: 'COMPLETED STC', meta: 'Mar 02–06, 2026 · Cyber Security Lab', desc: 'Hands-on STC on post-quantum cryptographic primitives, zero-knowledge proofs, blockchain privacy, and network forensics.', highlights: ['Hands-on CTF Challenge', 'ZK Proof Demos', '100% Completion Rate'] },
+  'open-day': { title: 'CSE Department Open Day & Innovation Expo', category: 'COMPLETED OPEN DAY', meta: 'Feb 18, 2026 · TIET Main Foyer', desc: 'Annual showcase featuring 120+ student projects, 15 industry judges, hardware demos, and innovation award ceremony.', highlights: ['120+ Projects Displayed', '15 Industry Judges', 'Awards Ceremony'] },
+  'edge-stc': { title: 'STC: Embedded Intelligence & Edge Computing', category: 'UPCOMING STC', meta: 'Nov 20–24, 2026 · IoT Innovation Lab', desc: 'Training on deploying compressed neural nets onto ARM Cortex boards, TinyML, and real-time IoT sensor inference.', highlights: ['Free Hardware Kit Provided', 'C++/Python Lab Sessions', 'Limited to 40 Seats'] },
+  'fdp-ai': { title: 'FDP: AI Tools & Generative Models for Educators', category: 'COMPLETED FDP', meta: 'Jan 06–10, 2026 · Smart Classroom Block', desc: '5-day FDP on AI-assisted pedagogy, ChatGPT, GitHub Copilot, and prompt engineering for curriculum design.', highlights: ['40+ Faculty Attended', 'Live Demo Sessions', 'Curriculum Design Workshop'] },
+  'blockchain-talk': { title: 'Industry Talk: Decentralized Finance & Blockchain Security', category: 'COMPLETED SEMINAR', meta: 'Dec 04, 2025 · TIET Seminar Hall', desc: 'Keynote by fintech engineers on smart contracts, DeFi protocols, Web3 architecture, and regulatory compliance.', highlights: ['Industry Expert Keynote', 'Smart Contract Demo', 'Open Discussion Panel'] },
+  'stc-ds': { title: 'STC: Applied Data Science & ML with Python', category: 'COMPLETED STC', meta: 'Nov 11–15, 2025 · Data Science Lab', desc: 'Intensive 5-day course on EDA, scikit-learn, XGBoost, model deployment with FastAPI, and MLOps fundamentals.', highlights: ['Hands-on Kaggle Competition', 'MLOps Pipeline Demo', 'FastAPI Deployment Lab'] }
 };
 
 function showEventDetails(id) {

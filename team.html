@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
-    content="CS-CATALYST Society Team — Meet the Faculty Leadership including Mr. Neeraj Kumar (HOD, CSE) and Dr. Sandeep Verma (Assistant Professor, CS-CATALYST Coordinator) and the student organizing panel.">
+    content="CS-CATALYST Society Team — Meet the Faculty Leadership including Prof. Neeraj Kumar (HOD, CSE), Dr. Seema Bawa (Assistant Professor, CSE), and Dr. Sandeep Verma (Assistant Professor, CS-CATALYST Coordinator) and the student organizing panel.">
   <title>Team | CS-CATALYST Society — CSE TIET</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,14 +16,14 @@
   <link rel="stylesheet" href="styles.css?v=2">
 </head>
 
-<body class="dark-theme">
+<body class="light-theme">
   <canvas id="quantumCanvas"></canvas>
 
   <!-- NAVBAR -->
   <header class="navbar-header" id="navbar">
     <div class="container navbar-container">
       <a href="index.html" class="brand-logo">
-        <img src="images/logo.jpg" alt="CS-CATALYST Logo" class="logo-img">
+        <img src="images/logo.png" alt="CS-CATALYST Logo" class="logo-img">
         <div class="logo-text">
           <span class="logo-title">CS-CATALYST</span>
           <span class="logo-sub">CSE Dept · TIET Patiala</span>
@@ -37,7 +37,6 @@
         <a href="apply.html" class="nav-link apply-btn-nav"><i class="fa-solid fa-paper-plane"></i> Apply Now</a>
       </nav>
       <div class="nav-actions">
-        <button class="theme-toggle-btn" id="themeToggle" title="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
         <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
       </div>
     </div>
@@ -46,9 +45,10 @@
   <!-- PAGE HERO -->
   <section class="page-hero">
     <div class="hero-glow glow-1"></div>
+    <div class="hero-glow glow-2"></div>
     <div class="container page-hero-container">
       <div class="page-hero-badge"><i class="fa-solid fa-users"></i> Leadership &amp; Team</div>
-      <h1 class="page-hero-title">Meet the <span class="gradient-text">CS-CATALYST Team</span></h1>
+      <h1 class="page-hero-title">Meet the <span class="gradient-text">CS-CATALYST</span> Team</h1>
       <p class="page-hero-sub">Distinguished faculty leadership and a passionate student organizing panel working
         together to drive technical excellence in the CSE Department, TIET.</p>
     </div>
@@ -65,31 +65,33 @@
       </div>
 
       <!-- HOD CARD - FULL WIDTH FEATURED -->
+      <!-- HOD CARD - FULL WIDTH FEATURED -->
       <div class="hod-feature-card">
         <div class="hod-img-col">
           <div class="hod-img-wrap">
-            <img src="images/neeraj.jpg" alt="Mr. Neeraj Kumar – Head of Department, CSE" class="hod-img">
+            <img src="images/neeraj.png" alt="Prof. Neeraj Kumar – Head of Department, CSE" class="hod-img">
             <div class="hod-glow-ring"></div>
           </div>
         </div>
         <div class="hod-info-col">
           <div class="hod-role-chip"><i class="fa-solid fa-crown"></i> HEAD OF DEPARTMENT</div>
-          <h2 class="hod-name">Mr. Neeraj Kumar</h2>
+          <h2 class="hod-name">Prof. Neeraj Kumar</h2>
           <p class="hod-dept">Department of Computer Science &amp; Engineering<br>Thapar Institute of Engineering &amp;
             Technology (TIET), Patiala</p>
           <div class="hod-divider"></div>
           <p class="hod-bio">
-            Mr. Neeraj Kumar serves as the Head of the Department (HOD) of Computer Science &amp; Engineering at Thapar
-            Institute of Engineering &amp; Technology, Patiala. Under his visionary leadership, the CSE Department has
-            consistently grown in academic excellence, research output, and industry collaboration. He champions the
-            CS-CATALYST Society as a cornerstone initiative for student development and departmental outreach.
+            Prof. Neeraj Kumar serves as the Head of the Department (HOD) of Computer Science &amp; Engineering at Thapar
+            Institute of Engineering &amp; Technology, Patiala. He is globally recognized for his research contributions,
+            being ranked as <strong>India's #1 Computer Science Researcher</strong> and <strong>#97 in the World</strong> (by Research.com / Guide2Research).
+            He is also listed among the Top 2% Scientists globally in the Stanford University list.
           </p>
           <p class="hod-bio" style="margin-top:12px">
-            His leadership has been instrumental in establishing national-level FDPs, flagship quantum computing
-            workshops, and strengthening the department's ties with industry leaders and academic institutions across
-            the country.
+            Under his visionary leadership, the CSE Department has consistently grown in academic excellence, research output, and industry collaboration. He champions the CS-CATALYST Society as a cornerstone initiative for student development and departmental outreach.
           </p>
-          <div class="hod-tags">
+          <div class="hod-contact-info" style="margin-top:18px; font-size:0.9rem; color:var(--text-muted); display:flex; flex-wrap:wrap; gap:20px; font-weight: 600;">
+            <span><i class="fa-solid fa-envelope" style="color:var(--accent-cyan);"></i> <a href="mailto:neeraj.kumar@thapar.edu" style="color:var(--text-muted); text-decoration:none;">neeraj.kumar@thapar.edu</a></span>
+          </div>
+          <div class="hod-tags" style="margin-top:20px">
             <span class="hod-tag"><i class="fa-solid fa-building-columns"></i> TIET Patiala</span>
             <span class="hod-tag"><i class="fa-solid fa-sitemap"></i> HOD — CSE Dept</span>
             <span class="hod-tag"><i class="fa-solid fa-star"></i> CS-CATALYST Patron</span>
@@ -97,12 +99,42 @@
         </div>
       </div>
 
-      <!-- CS-CATALYST COORDINATOR CARD -->
+      <!-- FACULTY MENTORS / ADVISORS -->
       <div class="section-header text-center" style="margin-top:60px;margin-bottom:36px">
-        <span class="section-tag"><i class="fa-solid fa-star"></i> Society Coordinator</span>
-        <h2 class="section-title" style="font-size:2rem">CS-CATALYST Faculty Coordinator</h2>
+        <span class="section-tag"><i class="fa-solid fa-chalkboard-user"></i> Faculty Mentors</span>
+        <h2 class="section-title" style="font-size:2rem">Faculty Mentors &amp; Coordinators</h2>
       </div>
 
+      <!-- DR. SEEMA BAWA CARD -->
+      <div class="coordinator-feature-card" style="margin-bottom:40px">
+        <div class="coord-img-col">
+          <div class="coord-img-wrap">
+            <img src="images/seema.png" alt="Dr. Seema Bawa – Assistant Professor, CSE" class="coord-img">
+            <div class="coord-badge-float"><i class="fa-solid fa-chalkboard-user"></i> Faculty Mentor</div>
+          </div>
+        </div>
+        <div class="coord-info-col">
+          <div class="coord-role-chip"><i class="fa-solid fa-person-chalkboard"></i> ASSISTANT PROFESSOR · CSE
+          </div>
+          <h2 class="coord-name">Dr. Seema Bawa</h2>
+          <p class="coord-designation">Assistant Professor — Department of Computer Science &amp; Engineering<br>Thapar
+            Institute of Engineering &amp; Technology (TIET), Patiala</p>
+          <div class="hod-divider"></div>
+          <p class="coord-bio">
+            Dr. Seema Bawa is an Assistant Professor in the CSE Department at TIET, Patiala. She actively mentors student initiatives, research projects, and departmental technical endeavors, guiding the society on academic rigor, innovation, and professional standards.
+          </p>
+          <div class="hod-contact-info" style="margin-top:18px; font-size:0.9rem; color:var(--text-muted); display:flex; flex-wrap:wrap; gap:20px; font-weight: 600;">
+            <span><i class="fa-solid fa-envelope" style="color:var(--accent-purple);"></i> <a href="mailto:seema.bawa@thapar.edu" style="color:var(--text-muted); text-decoration:none;">seema.bawa@thapar.edu</a></span>
+          </div>
+          <div class="hod-tags" style="margin-top:20px">
+            <span class="hod-tag"><i class="fa-solid fa-chalkboard-user"></i> Faculty Mentor</span>
+            <span class="hod-tag"><i class="fa-solid fa-graduation-cap"></i> CSE Department</span>
+            <span class="hod-tag"><i class="fa-solid fa-building-columns"></i> TIET Patiala</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DR. SANDEEP VERMA CARD -->
       <div class="coordinator-feature-card">
         <div class="coord-img-col">
           <div class="coord-img-wrap">
@@ -120,19 +152,17 @@
           <div class="hod-divider"></div>
           <p class="coord-bio">
             Dr. Sandeep Verma is an Assistant Professor in the CSE Department at TIET, Patiala, and serves as the
-            primary Faculty Coordinator of CS-CATALYST Society. He plays a hands-on role in designing, planning, and
-            executing all departmental academic and technical events — from Faculty Development Programs and Short-Term
-            Courses to expert talks, seminars, and the Q-BIT Quantum Computing Workshop series.
+            primary Faculty Coordinator of CS-CATALYST Society. He holds a Post Doc from IIT Kharagpur, a PhD from NIT Jalandhar, and an M.E. from Panjab University. He is listed among the <strong>Top 2% Scientists in the Stanford List</strong>.
           </p>
           <p class="coord-bio" style="margin-top:12px">
-            His research interests and teaching expertise span across emerging areas in computer science. He mentors the
-            student organizing panel directly, guiding them on event management, professional development,
-            documentation, and leadership skills.
+            He plays a hands-on role in designing, planning, and executing all CS-CATALYST initiatives, including Faculty Development Programs, Short-Term Courses, expert talks, and the flagship Q-BIT Quantum Computing Workshop series. He mentors the student organizing panel directly, guiding them on leadership and event execution.
           </p>
-          <div class="hod-tags">
-            <span class="hod-tag"><i class="fa-solid fa-atom"></i> Quantum Computing Events</span>
+          <div class="hod-contact-info" style="margin-top:18px; font-size:0.9rem; color:var(--text-muted); display:flex; flex-wrap:wrap; gap:20px; font-weight: 600;">
+            <span><i class="fa-solid fa-envelope" style="color:var(--accent-cyan);"></i> <a href="mailto:sandeep.verma@thapar.edu" style="color:var(--text-muted); text-decoration:none;">sandeep.verma@thapar.edu</a></span>
+          </div>
+          <div class="hod-tags" style="margin-top:20px">
+            <span class="hod-tag"><i class="fa-solid fa-atom"></i> Quantum Computing</span>
             <span class="hod-tag"><i class="fa-solid fa-chalkboard-user"></i> FDPs &amp; STCs</span>
-            <span class="hod-tag"><i class="fa-solid fa-people-roof"></i> Student Mentor</span>
             <span class="hod-tag"><i class="fa-solid fa-building-columns"></i> TIET Patiala</span>
           </div>
         </div>
@@ -215,6 +245,9 @@
       </div>
     </div>
   </section>
+
+  <!-- Global Footer Placement -->
+  <div id="footer-placeholder"></div>
 
   <div id="toastContainer" class="toast-container"></div>
   <script src="script.js"></script>

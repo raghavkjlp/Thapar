@@ -16,14 +16,15 @@
   <link rel="stylesheet" href="styles.css?v=2">
 </head>
 
-<body class="dark-theme">
+<body class="light-theme">
   <canvas id="quantumCanvas"></canvas>
 
   <!-- NAVBAR -->
   <header class="navbar-header" id="navbar">
     <div class="container navbar-container">
       <a href="index.html" class="brand-logo">
-        <img src="images/logo.jpg" alt="CS-CATALYST Logo" class="logo-img">
+        <img src="images/logo.png" alt="CS-CATALYST Logo" class="logo-img">
+
         <div class="logo-text">
           <span class="logo-title">CS-CATALYST</span>
           <span class="logo-sub">CSE Dept · TIET Patiala</span>
@@ -37,7 +38,6 @@
         <a href="apply.html" class="nav-link apply-btn-nav active"><i class="fa-solid fa-paper-plane"></i> Apply Now</a>
       </nav>
       <div class="nav-actions">
-        <button class="theme-toggle-btn" id="themeToggle" title="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
         <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
       </div>
     </div>
@@ -49,7 +49,7 @@
     <div class="hero-glow glow-2"></div>
     <div class="container page-hero-container">
       <div class="page-hero-badge"><i class="fa-solid fa-pen-to-square"></i> Recruitment Drive 2026</div>
-      <h1 class="page-hero-title">Join the <span class="gradient-text">CS-CATALYST Panel</span></h1>
+      <h1 class="page-hero-title">Join the <span class="gradient-text">CS-CATALYST</span> Panel</h1>
       <p class="page-hero-sub">Applications are open for the CS-CATALYST Society Organizing Panel Team for students of
         the Computer Science &amp; Engineering Department, TIET. Shortlisted candidates will be invited for an
         interaction with esteemed faculty professors.</p>
@@ -187,6 +187,9 @@
       <button class="btn btn-primary btn-full" onclick="closeAppSuccessModal()">Return to Portal</button>
     </div>
   </div>
+
+  <!-- Global Footer Placement -->
+  <div id="footer-placeholder"></div>
 
   <div id="toastContainer" class="toast-container"></div>
   <script src="script.js"></script>
