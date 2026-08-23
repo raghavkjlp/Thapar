@@ -3914,3 +3914,27 @@ body.light-theme .social-icons a:hover {
     padding: 12px 18px !important;
   }
 }
+
+/* Governance Card styling */
+.governance-card {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 40px 30px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+body.light-theme .governance-card {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+.governance-card .section-title {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}

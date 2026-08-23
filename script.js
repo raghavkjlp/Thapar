@@ -128,15 +128,7 @@ function injectFooter() {
             <li><a href="apply.html"><i class="fa-solid fa-angle-right"></i> Apply for Panel</a></li>
           </ul>
         </div>
-        <div class="footer-col">
-          <h4>Faculty Leadership</h4>
-          <div class="coord-mini-contact">
-            <p><strong>Prof. Neeraj Kumar</strong><br>Head of Department — CSE</p>
-            <p><strong>Dr. Seema Bawa</strong><br> Professor — CSE</p>
-            <p><strong>Dr. Sandeep Verma</strong><br>Assistant Professor — CS-CATALYST Coordinator</p>
-            <p><i class="fa-solid fa-building-columns"></i> Department of CSE, TIET, Patiala — 147004</p>
-          </div>
-        </div>
+       
         <div class="footer-col">
           <h4>Contact</h4>
           <p class="contact-info"><i class="fa-solid fa-location-dot"></i> CSE Department, Thapar Institute, Patiala, Punjab — 147004</p>
