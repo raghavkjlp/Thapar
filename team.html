@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="CS-CATALYST Society Team — Meet the Faculty Leadership including Mr. Neeraj Kumar (HOD, CSE) and Dr. Sandeep Verma (Assistant Professor, CS-CATALYST Coordinator) and the student organizing panel.">
+  <title>Team | CS-CATALYST Society — CSE TIET</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="dark-theme">
+  <canvas id="quantumCanvas"></canvas>
+
+  <!-- NAVBAR -->
+  <header class="navbar-header" id="navbar">
+    <div class="container navbar-container">
+      <a href="index.html" class="brand-logo">
+        <img src="images/logo.jpg" alt="CS-CATALYST Logo" class="logo-img">
+        <div class="logo-text">
+          <span class="logo-title">CS-CATALYST</span>
+          <span class="logo-sub">CSE Dept · TIET Patiala</span>
+        </div>
+      </a>
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="about.html" class="nav-link"><i class="fa-solid fa-circle-info"></i> About</a>
+        <a href="events.html" class="nav-link"><i class="fa-solid fa-calendar-days"></i> Events</a>
+        <a href="team.html" class="nav-link active"><i class="fa-solid fa-users"></i> Team</a>
+        <a href="apply.html" class="nav-link apply-btn-nav"><i class="fa-solid fa-paper-plane"></i> Apply Now</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" id="themeToggle" title="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="hero-glow glow-1"></div>
+    <div class="container page-hero-container">
+      <div class="page-hero-badge"><i class="fa-solid fa-users"></i> Leadership &amp; Team</div>
+      <h1 class="page-hero-title">Meet the <span class="gradient-text">CS-CATALYST Team</span></h1>
+      <p class="page-hero-sub">Distinguished faculty leadership and a passionate student organizing panel working
+        together to drive technical excellence in the CSE Department, TIET.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════ FACULTY LEADERSHIP ═══════════════ -->
+  <section class="section-padding" id="faculty">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag"><i class="fa-solid fa-chalkboard-user"></i> Faculty Leadership</span>
+        <h2 class="section-title">Departmental Guidance &amp; Faculty Coordination</h2>
+        <p class="section-description">CS-CATALYST is under the distinguished guidance of the Computer Science &amp;
+          Engineering Department leadership at TIET, Patiala.</p>
+      </div>
+
+      <!-- HOD CARD - FULL WIDTH FEATURED -->
+      <div class="hod-feature-card">
+        <div class="hod-img-col">
+          <div class="hod-img-wrap">
+            <img src="images/neeraj.jpg" alt="Mr. Neeraj Kumar – Head of Department, CSE" class="hod-img">
+            <div class="hod-glow-ring"></div>
+          </div>
+        </div>
+        <div class="hod-info-col">
+          <div class="hod-role-chip"><i class="fa-solid fa-crown"></i> HEAD OF DEPARTMENT</div>
+          <h2 class="hod-name">Mr. Neeraj Kumar</h2>
+          <p class="hod-dept">Department of Computer Science &amp; Engineering<br>Thapar Institute of Engineering &amp;
+            Technology (TIET), Patiala</p>
+          <div class="hod-divider"></div>
+          <p class="hod-bio">
+            Mr. Neeraj Kumar serves as the Head of the Department (HOD) of Computer Science &amp; Engineering at Thapar
+            Institute of Engineering &amp; Technology, Patiala. Under his visionary leadership, the CSE Department has
+            consistently grown in academic excellence, research output, and industry collaboration. He champions the
+            CS-CATALYST Society as a cornerstone initiative for student development and departmental outreach.
+          </p>
+          <p class="hod-bio" style="margin-top:12px">
+            His leadership has been instrumental in establishing national-level FDPs, flagship quantum computing
+            workshops, and strengthening the department's ties with industry leaders and academic institutions across
+            the country.
+          </p>
+          <div class="hod-tags">
+            <span class="hod-tag"><i class="fa-solid fa-building-columns"></i> TIET Patiala</span>
+            <span class="hod-tag"><i class="fa-solid fa-sitemap"></i> HOD — CSE Dept</span>
+            <span class="hod-tag"><i class="fa-solid fa-star"></i> CS-CATALYST Patron</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CS-CATALYST COORDINATOR CARD -->
+      <div class="section-header text-center" style="margin-top:60px;margin-bottom:36px">
+        <span class="section-tag"><i class="fa-solid fa-star"></i> Society Coordinator</span>
+        <h2 class="section-title" style="font-size:2rem">CS-CATALYST Faculty Coordinator</h2>
+      </div>
+
+      <div class="coordinator-feature-card">
+        <div class="coord-img-col">
+          <div class="coord-img-wrap">
+            <img src="images/sandeep.jpg" alt="Dr. Sandeep Verma – Assistant Professor, CS-CATALYST Coordinator"
+              class="coord-img">
+            <div class="coord-badge-float"><i class="fa-solid fa-star"></i> Coordinator</div>
+          </div>
+        </div>
+        <div class="coord-info-col">
+          <div class="coord-role-chip"><i class="fa-solid fa-person-chalkboard"></i> FACULTY COORDINATOR · CS-CATALYST
+          </div>
+          <h2 class="coord-name">Dr. Sandeep Verma</h2>
+          <p class="coord-designation">Assistant Professor — Department of Computer Science &amp; Engineering<br>Thapar
+            Institute of Engineering &amp; Technology (TIET), Patiala</p>
+          <div class="hod-divider"></div>
+          <p class="coord-bio">
+            Dr. Sandeep Verma is an Assistant Professor in the CSE Department at TIET, Patiala, and serves as the
+            primary Faculty Coordinator of CS-CATALYST Society. He plays a hands-on role in designing, planning, and
+            executing all departmental academic and technical events — from Faculty Development Programs and Short-Term
+            Courses to expert talks, seminars, and the Q-BIT Quantum Computing Workshop series.
+          </p>
+          <p class="coord-bio" style="margin-top:12px">
+            His research interests and teaching expertise span across emerging areas in computer science. He mentors the
+            student organizing panel directly, guiding them on event management, professional development,
+            documentation, and leadership skills.
+          </p>
+          <div class="hod-tags">
+            <span class="hod-tag"><i class="fa-solid fa-atom"></i> Quantum Computing Events</span>
+            <span class="hod-tag"><i class="fa-solid fa-chalkboard-user"></i> FDPs &amp; STCs</span>
+            <span class="hod-tag"><i class="fa-solid fa-people-roof"></i> Student Mentor</span>
+            <span class="hod-tag"><i class="fa-solid fa-building-columns"></i> TIET Patiala</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ STUDENT ORGANIZING PANEL DOMAINS ═══════════════ -->
+  <section class="section-padding" style="padding-top:0" id="panel">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag"><i class="fa-solid fa-sitemap"></i> Student Panel</span>
+        <h2 class="section-title">Student Organizing Panel</h2>
+        <p class="section-description">CS-CATALYST's student organizing team is structured across five specialized
+          domains — each critical to running world-class departmental events.</p>
+      </div>
+
+      <div class="panel-domains-grid">
+        <div class="panel-domain-card">
+          <div class="pd-icon pd-event"><i class="fa-solid fa-diagram-project"></i></div>
+          <h3>Event Planning &amp; Logistics</h3>
+          <p>Venue coordination, scheduling, resource planning, vendor management, and overall event execution strategy.
+          </p>
+          <div class="pd-skills">
+            <span>Venue Booking</span><span>Timeline Management</span><span>Logistics</span>
+          </div>
+        </div>
+
+        <div class="panel-domain-card">
+          <div class="pd-icon pd-tech"><i class="fa-solid fa-laptop-code"></i></div>
+          <h3>Technical Support &amp; Labs</h3>
+          <p>Audio/visual setup, live streaming, lab environment provisioning, platform access, and real-time technical
+            troubleshooting.</p>
+          <div class="pd-skills">
+            <span>AV Setup</span><span>Lab Provisioning</span><span>Live Support</span>
+          </div>
+        </div>
+
+        <div class="panel-domain-card">
+          <div class="pd-icon pd-design"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+          <h3>Design &amp; Media</h3>
+          <p>Creating event posters, digital announcements, social media graphics, photography, videography, and
+            post-event highlight reels.</p>
+          <div class="pd-skills">
+            <span>Poster Design</span><span>Social Media</span><span>Photography</span>
+          </div>
+        </div>
+
+        <div class="panel-domain-card">
+          <div class="pd-icon pd-pr"><i class="fa-solid fa-bullhorn"></i></div>
+          <h3>Public Relations &amp; Outreach</h3>
+          <p>Speaker invitations, participant outreach, inter-departmental coordination, media coverage, and stakeholder
+            communications.</p>
+          <div class="pd-skills">
+            <span>Speaker Liaison</span><span>Outreach</span><span>Press Coverage</span>
+          </div>
+        </div>
+
+        <div class="panel-domain-card">
+          <div class="pd-icon pd-doc"><i class="fa-solid fa-file-invoice"></i></div>
+          <h3>Documentation &amp; Reports</h3>
+          <p>Attendance records, certificates, participant feedback analysis, post-event reports, and official event
+            documentation.</p>
+          <div class="pd-skills">
+            <span>Certificates</span><span>Feedback Analysis</span><span>Reports</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Apply CTA -->
+      <div class="panel-apply-cta">
+        <div class="pac-inner">
+          <div class="pac-text">
+            <h3>Want to Join the Organizing Panel?</h3>
+            <p>We are recruiting passionate CSE Department students to join the CS-CATALYST organizing team. If
+              shortlisted, you'll be called for an interaction with esteemed faculty.</p>
+          </div>
+          <a href="apply.html" class="btn btn-primary btn-glow"><i class="fa-solid fa-paper-plane"></i> Apply Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="toastContainer" class="toast-container"></div>
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="About CS-CATALYST Society — Mission, vision, objectives, responsibilities of members and the role of the CSE Department, TIET in driving academic and technical excellence.">
+  <title>About CS-CATALYST | CSE Dept TIET</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="dark-theme">
+  <canvas id="quantumCanvas"></canvas>
+
+  <!-- NAVBAR -->
+  <header class="navbar-header" id="navbar">
+    <div class="container navbar-container">
+      <a href="index.html" class="brand-logo">
+        <img src="images/logo.jpg" alt="CS-CATALYST Logo" class="logo-img">
+        <div class="logo-text">
+          <span class="logo-title">CS-CATALYST</span>
+          <span class="logo-sub">CSE Dept · TIET Patiala</span>
+        </div>
+      </a>
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="about.html" class="nav-link active"><i class="fa-solid fa-circle-info"></i> About</a>
+        <a href="events.html" class="nav-link"><i class="fa-solid fa-calendar-days"></i> Events</a>
+        <a href="team.html" class="nav-link"><i class="fa-solid fa-users"></i> Team</a>
+        <a href="apply.html" class="nav-link apply-btn-nav"><i class="fa-solid fa-paper-plane"></i> Apply Now</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" id="themeToggle" title="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="hero-glow glow-1"></div>
+    <div class="container page-hero-container">
+      <div class="page-hero-badge"><i class="fa-solid fa-circle-info"></i> About the Society</div>
+      <h1 class="page-hero-title">About <span class="gradient-text">CS-CATALYST</span></h1>
+      <p class="page-hero-sub">The official departmental society driving academic excellence, technical growth, and
+        student leadership in the CSE Department of Thapar Institute of Engineering &amp; Technology (TIET), Patiala.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══ MISSION & VISION ═══ -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="mv-grid">
+        <div class="mv-card mv-mission">
+          <div class="mv-icon"><i class="fa-solid fa-bullseye"></i></div>
+          <h2>Our Mission</h2>
+          <p>To foster a dynamic academic ecosystem within the CSE Department by organizing high-impact Faculty
+            Development Programs (FDPs), Short-Term Courses (STCs), expert talks, workshops, and student engagement
+            initiatives that bridge the gap between academia and industry.</p>
+        </div>
+        <div class="mv-card mv-vision">
+          <div class="mv-icon"><i class="fa-solid fa-eye"></i></div>
+          <h2>Our Vision</h2>
+          <p>To be the most impactful departmental society at TIET — empowering students, faculty, and researchers to
+            innovate, collaborate, and lead in an ever-evolving technological landscape, from quantum computing to
+            artificial intelligence.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ WHAT WE DO (SERVICES) ═══ -->
+  <section class="section-padding" style="padding-top:0">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag"><i class="fa-solid fa-gears"></i> Core Activities</span>
+        <h2 class="section-title">What CS-CATALYST Does</h2>
+        <p class="section-description">A central platform to announce, manage, showcase, and celebrate all departmental
+          technical activities.</p>
+      </div>
+      <div class="grid-3-col features-grid">
+        <div class="feature-card">
+          <div class="feature-icon bg-cyan"><i class="fa-solid fa-calendar-check"></i></div>
+          <h3>Announce &amp; Schedule Events</h3>
+          <p>All upcoming FDPs, STCs, workshops, expert talks, and departmental events are published with complete
+            schedules, registration links, and speaker details.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon bg-purple"><i class="fa-solid fa-share-nodes"></i></div>
+          <h3>Event Updates &amp; Registrations</h3>
+          <p>Real-time updates on registration deadlines, schedule changes, venue details, and participant
+            communications across all active events.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon bg-pink"><i class="fa-solid fa-images"></i></div>
+          <h3>Showcase Completed Events</h3>
+          <p>A comprehensive archive of completed FDPs, STCs, talks, and seminars with photo galleries, attendance
+            records, certificates, and post-event reports.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon bg-blue"><i class="fa-solid fa-people-group"></i></div>
+          <h3>Highlight Team &amp; Activities</h3>
+          <p>Spotlighting the CS-CATALYST organizing panel members, faculty leadership, domain experts, and student
+            contributors who make each event successful.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon bg-cyan"><i class="fa-solid fa-chalkboard-user"></i></div>
+          <h3>Faculty Development Programs</h3>
+          <p>Organizing national FDPs that help faculty members stay current with emerging technologies, pedagogical
+            tools, and research methodologies.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon bg-purple"><i class="fa-solid fa-certificate"></i></div>
+          <h3>Certifications &amp; Documentation</h3>
+          <p>Providing e-certificates, attendance records, participant feedback, and post-event documentation for all
+            CS-CATALYST programs and activities.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ RESPONSIBILITIES OF MEMBERS ═══ -->
+  <section class="section-padding resp-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag"><i class="fa-solid fa-list-check"></i> Member Responsibilities</span>
+        <h2 class="section-title">Responsibilities of CS-CATALYST Members</h2>
+        <p class="section-description">Every member of the CS-CATALYST Organizing Panel plays a vital role in delivering
+          world-class departmental events.</p>
+      </div>
+      <div class="resp-grid-about">
+        <div class="resp-item-about">
+          <div class="resp-num">01</div>
+          <div class="resp-text-about">
+            <h4>Planning &amp; Coordination</h4>
+            <p>Assist in planning, organizing, and coordinating academic, technical, and professional events of the
+              Computer Science Department.</p>
+          </div>
+        </div>
+        <div class="resp-item-about">
+          <div class="resp-num">02</div>
+          <div class="resp-text-about">
+            <h4>FDPs, STCs &amp; Expert Talks</h4>
+            <p>Coordinate FDPs, Short-Term Courses (STCs), expert talks, seminars, workshops, technical sessions, Open
+              Day, and other departmental events.</p>
+          </div>
+        </div>
+        <div class="resp-item-about">
+          <div class="resp-num">03</div>
+          <div class="resp-text-about">
+            <h4>Faculty Support</h4>
+            <p>Support faculty coordinators in event planning, scheduling, logistics, venue arrangements, and resource
+              requirements.</p>
+          </div>
+        </div>
+        <div class="resp-item-about">
+          <div class="resp-num">04</div>
+          <div class="resp-text-about">
+            <h4>Stakeholder Coordination</h4>
+            <p>Coordinate with speakers, experts, faculty members, students, and other stakeholders before and during
+              events.</p>
+          </div>
+        </div>
+        <div class="resp-item-about">
+          <div class="resp-num">05</div>
+          <div class="resp-text-about">
+            <h4>Participant Management</h4>
+            <p>Handle student registrations, attendance, communication, and participant coordination for all events.</p>
+          </div>
+        </div>
+        <div class="resp-item-about">
+          <div class="resp-num">06</div>
+          <div class="resp-text-about">
+            <h4>Promotions &amp; Media</h4>
+            <p>Prepare and circulate event announcements, invitations, posters, schedules, and other promotional content
+              through digital channels.</p>
+          </div>
+        </div>
+        <div class="resp-item-about">
+          <div class="resp-num">07</div>
+          <div class="resp-text-about">
+            <h4>Event Day Operations</h4>
+            <p>Manage event-day activities including registration desks, seating, technical arrangements, hospitality,
+              and overall coordination.</p>
+          </div>
+        </div>
+        <div class="resp-item-about">
+          <div class="resp-num">08</div>
+          <div class="resp-text-about">
+            <h4>Documentation &amp; Reports</h4>
+            <p>Maintain attendance records, photographs, feedback forms, certificates, and assist in preparing
+              post-event reports for future improvement.</p>
+          </div>
+        </div>
+        <div class="resp-item-about">
+          <div class="resp-num">09</div>
+          <div class="resp-text-about">
+            <h4>Leadership &amp; Professionalism</h4>
+            <p>Demonstrate leadership, teamwork, professionalism, creativity, and problem-solving skills while handling
+              events and representing CS-CATALYST.</p>
+          </div>
+        </div>
+        <div class="resp-item-about">
+          <div class="resp-num">10</div>
+          <div class="resp-text-about">
+            <h4>Innovation &amp; Ideas</h4>
+            <p>Take initiative in identifying and proposing new ideas for academic, technical, and student-oriented
+              activities that raise the department's profile.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ABOUT TIET CSE DEPT ═══ -->
+  <section class="section-padding" style="padding-top:0">
+    <div class="container">
+      <div class="dept-about-card">
+        <div class="dept-about-text">
+          <span class="section-tag"><i class="fa-solid fa-university"></i> Our Home</span>
+          <h2 class="section-title" style="font-size:2rem;margin-bottom:14px">Department of Computer Science &amp;
+            Engineering, TIET</h2>
+          <p>The Department of Computer Science &amp; Engineering at Thapar Institute of Engineering &amp; Technology
+            (Deemed to be University), Patiala, Punjab is one of the leading CSE departments in North India, known for
+            its robust research output, world-class faculty, and industry collaboration programs.</p>
+          <p style="margin-top:14px;color:var(--text-muted)">CS-CATALYST serves as the departmental society that
+            amplifies this reputation through high-impact events, national-level programs, and student empowerment
+            initiatives that prepare graduates for tomorrow's technological challenges.</p>
+          <div class="dept-tags">
+            <span class="dept-tag-pill"><i class="fa-solid fa-map-marker-alt"></i> TIET Patiala, Punjab</span>
+            <span class="dept-tag-pill"><i class="fa-solid fa-graduation-cap"></i> Deemed University (NAAC A++
+              Grade)</span>
+            <span class="dept-tag-pill"><i class="fa-solid fa-award"></i> NIRF Ranked Institution</span>
+          </div>
+        </div>
+        <div class="dept-about-stats">
+          <div class="dept-stat"><span class="ds-number">50+</span><span class="ds-label">Faculty Members</span></div>
+          <div class="dept-stat"><span class="ds-number">2000+</span><span class="ds-label">Students Enrolled</span>
+          </div>
+          <div class="dept-stat"><span class="ds-number">100+</span><span class="ds-label">Research Publications</span>
+          </div>
+          <div class="dept-stat"><span class="ds-number">30+</span><span class="ds-label">Industry MoUs</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CTA ═══ -->
+  <section class="cta-join section-padding" style="padding-top:0">
+    <div class="container">
+      <div class="cta-card-glow">
+        <div class="cta-inner">
+          <i class="fa-solid fa-atom cta-icon"></i>
+          <h2>Join the CS-CATALYST Movement</h2>
+          <p>Applications are now open for the Organizing Panel Team. Be part of events that shape the future of
+            computing education at TIET.</p>
+          <div class="cta-actions">
+            <a href="apply.html" class="btn btn-primary btn-glow btn-lg"><i class="fa-solid fa-paper-plane"></i> Apply
+              Now</a>
+            <a href="team.html" class="btn btn-secondary"><i class="fa-solid fa-users"></i> Meet the Team</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+  <div id="toastContainer" class="toast-container"></div>
+  <script src="script.js"></script>
+</body>
+
+</html>

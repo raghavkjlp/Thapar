@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Apply to join the CS-CATALYST Society Organizing Panel — Computer Science Department, TIET. Fill out the application form for shortlisting and faculty interaction.">
+  <title>Apply | CS-CATALYST Organizing Panel — CSE TIET</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="dark-theme">
+  <canvas id="quantumCanvas"></canvas>
+
+  <!-- NAVBAR -->
+  <header class="navbar-header" id="navbar">
+    <div class="container navbar-container">
+      <a href="index.html" class="brand-logo">
+        <img src="images/logo.jpg" alt="CS-CATALYST Logo" class="logo-img">
+        <div class="logo-text">
+          <span class="logo-title">CS-CATALYST</span>
+          <span class="logo-sub">CSE Dept · TIET Patiala</span>
+        </div>
+      </a>
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="about.html" class="nav-link"><i class="fa-solid fa-circle-info"></i> About</a>
+        <a href="events.html" class="nav-link"><i class="fa-solid fa-calendar-days"></i> Events</a>
+        <a href="team.html" class="nav-link"><i class="fa-solid fa-users"></i> Team</a>
+        <a href="apply.html" class="nav-link apply-btn-nav active"><i class="fa-solid fa-paper-plane"></i> Apply Now</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" id="themeToggle" title="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="hero-glow glow-1"></div>
+    <div class="hero-glow glow-2"></div>
+    <div class="container page-hero-container">
+      <div class="page-hero-badge"><i class="fa-solid fa-pen-to-square"></i> Recruitment Drive 2026</div>
+      <h1 class="page-hero-title">Join the <span class="gradient-text">CS-CATALYST Panel</span></h1>
+      <p class="page-hero-sub">Applications are open for the CS-CATALYST Society Organizing Panel Team for students of
+        the Computer Science &amp; Engineering Department, TIET. Shortlisted candidates will be invited for an
+        interaction with esteemed faculty professors.</p>
+    </div>
+  </section>
+
+  <!-- ═══ INFO CARDS ═══ -->
+  <section class="section-padding" style="padding-bottom:40px">
+    <div class="container">
+      <div class="apply-info-grid">
+        <div class="apply-info-card">
+          <div class="ai-icon bg-cyan"><i class="fa-solid fa-user-check"></i></div>
+          <h4>Who Can Apply?</h4>
+          <p>Students currently enrolled in the CSE Department (B.Tech, M.Tech, Ph.D.) at TIET, Patiala who are
+            passionate about event organization.</p>
+        </div>
+        <div class="apply-info-card">
+          <div class="ai-icon bg-purple"><i class="fa-solid fa-list-check"></i></div>
+          <h4>Selection Process</h4>
+          <p>Resume shortlisting by faculty followed by a personal interaction session with esteemed professors of the
+            CSE Department.</p>
+        </div>
+        <div class="apply-info-card">
+          <div class="ai-icon bg-pink"><i class="fa-solid fa-trophy"></i></div>
+          <h4>What You Gain</h4>
+          <p>Real event management experience, faculty mentorship, certificate of recognition, leadership skills, and a
+            strong professional network.</p>
+        </div>
+        <div class="apply-info-card">
+          <div class="ai-icon bg-blue"><i class="fa-solid fa-calendar-check"></i></div>
+          <h4>Application Deadline</h4>
+          <p>Applications close on <strong>September 20, 2026</strong>. Shortlisted candidates will be notified within 7
+            working days after the deadline.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ APPLICATION FORM ═══ -->
+  <section class="section-padding" style="padding-top:0" id="form">
+    <div class="container">
+      <div class="form-wrapper-glass">
+        <div class="form-header-block text-center">
+          <span class="form-tag-badge"><i class="fa-solid fa-pen-to-square"></i> OFFICIAL APPLICATION FORM</span>
+          <h2 class="form-main-title">Application for CS-Catalyst Society Organizing Panel Team</h2>
+          <div class="notice-box-highlight">
+            <i class="fa-solid fa-circle-info notice-icon"></i>
+            <p>This form is for applicants belonging to the <strong>Computer Science &amp; Engineering
+                Department</strong> who wish to join the organizing team. If your resume is shortlisted, you will be
+              called for an interaction with esteemed professors of the CSE Department.</p>
+          </div>
+
+        </div>
+
+        <!-- Responsibilities Accordion -->
+        <div class="responsibilities-block">
+          <div class="resp-title-bar" id="respToggle">
+            <h3><i class="fa-solid fa-list-check"></i> Key Responsibilities of CS-CATALYST Members (Click to expand)
+            </h3>
+            <span class="toggle-icon"><i class="fa-solid fa-chevron-down"></i></span>
+          </div>
+          <div class="resp-content" id="respContent" style="display:none">
+            <div class="grid-2-col resp-list-grid">
+              <ul>
+                <li><i class="fa-solid fa-check-double"></i> Assist in planning, organizing, and coordinating academic,
+                  technical, and professional events.</li>
+                <li><i class="fa-solid fa-check-double"></i> Coordinate FDPs, STCs, expert talks, seminars, workshops,
+                  and departmental events.</li>
+                <li><i class="fa-solid fa-check-double"></i> Support faculty coordinators in event planning, scheduling,
+                  logistics, and resource requirements.</li>
+                <li><i class="fa-solid fa-check-double"></i> Coordinate with speakers, experts, faculty, and students
+                  before and during events.</li>
+                <li><i class="fa-solid fa-check-double"></i> Handle student registrations, attendance, communication,
+                  and participant coordination.</li>
+                <li><i class="fa-solid fa-check-double"></i> Prepare and circulate event announcements, invitations,
+                  posters, and schedules.</li>
+                <li><i class="fa-solid fa-check-double"></i> Manage event-day activities: registration desks, seating,
+                  technical arrangements, hospitality.</li>
+                <li><i class="fa-solid fa-check-double"></i> Take initiative in identifying and proposing new ideas for
+                  student-oriented activities.</li>
+              </ul>
+              <ul>
+                <li><i class="fa-solid fa-check-double"></i> Maintain proper documentation: attendance records, photos,
+                  feedback, reports, certificates.</li>
+                <li><i class="fa-solid fa-check-double"></i> Assist in preparing post-event reports and collecting
+                  feedback for future improvement.</li>
+                <li><i class="fa-solid fa-check-double"></i> Work as a team and take responsibility for assigned tasks
+                  ensuring timely completion.</li>
+                <li><i class="fa-solid fa-check-double"></i> Communicate effectively with faculty, industry experts,
+                  speakers, and students.</li>
+                <li><i class="fa-solid fa-check-double"></i> Demonstrate leadership, teamwork, professionalism,
+                  creativity, and problem-solving skills.</li>
+                <li><i class="fa-solid fa-check-double"></i> Contribute ideas toward making departmental events more
+                  engaging and impactful.</li>
+                <li><i class="fa-solid fa-check-double"></i> Represent CS-CATALYST professionally and build a strong
+                  culture of academic &amp; technical activities.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- GOOGLE FORM EMBED & ACTION BUTTON -->
+        <div class="google-form-container" style="margin-top: 32px; text-align: center;">
+          <div style="margin-bottom: 24px;">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfAXhEwMDsA6rRmtU4U7uMFPTuvtPhQvfALfVZ-pVDbd1mMRA/viewform"
+              target="_blank" class="btn btn-primary btn-glow btn-lg" style="padding: 14px 28px; font-size: 1.1rem;">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Application Form in Google Forms
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUCCESS MODAL -->
+  <div class="modal-overlay" id="appSuccessModal">
+    <div class="modal-card modal-sm text-center">
+      <button class="modal-close" onclick="closeAppSuccessModal()">&times;</button>
+      <div class="success-icon-animated" style="margin:24px 0 12px">
+        <i class="fa-solid fa-circle-check fa-5x text-cyan"></i>
+      </div>
+      <h3 style="font-size:1.6rem;margin-bottom:10px">Application Submitted!</h3>
+      <p class="modal-text">Thank you <strong id="submittedApplicantName">Applicant</strong>! Your application to the
+        <strong>CS-CATALYST Organizing Panel</strong> has been received.
+      </p>
+      <div class="app-ref-box">
+        <span>Application Reference No.:</span>
+        <strong id="appRefCode">CSC-2026-XXXXX</strong>
+      </div>
+      <p class="next-step-hint" style="margin:16px 0">
+        <i class="fa-solid fa-clock text-cyan"></i> If shortlisted, you will receive an invitation via email for a
+        faculty interaction session at the CSE Department.
+      </p>
+      <button class="btn btn-primary btn-full" onclick="closeAppSuccessModal()">Return to Portal</button>
+    </div>
+  </div>
+
+  <div id="toastContainer" class="toast-container"></div>
+  <script src="script.js"></script>
+</body>
+
+</html>

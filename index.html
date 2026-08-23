@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="CS-CATALYST Society - Official platform for academic FDPs, STCs, Quantum Workshops, expert talks & events at Thapar Institute of Engineering & Technology CSE Department.">
+  <title>CS-CATALYST Society | Home — CSE Dept TIET</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="dark-theme">
+
+  <canvas id="quantumCanvas"></canvas>
+
+  <!-- TOP ANNOUNCEMENT BAR -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <div class="badge-pulse"><span class="pulse-dot"></span> LIVE EVENT</div>
+      <div class="ticker-text">⚡ <strong>Q-BIT @ TIET 2026</strong>: 5-Day Quantum Computing Training — 07–11 Sept 2026
+        &bull; Seats Filling Fast!</div>
+      <a href="events.html" class="top-bar-btn">View All Events <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="navbar-header" id="navbar">
+    <div class="container navbar-container">
+      <a href="index.html" class="brand-logo">
+        <img src="images/logo.jpg" alt="CS-CATALYST Logo" class="logo-img">
+        <div class="logo-text">
+          <span class="logo-title">CS-CATALYST</span>
+          <span class="logo-sub">CSE Dept · TIET Patiala</span>
+        </div>
+      </a>
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link active"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="about.html" class="nav-link"><i class="fa-solid fa-circle-info"></i> About</a>
+        <a href="events.html" class="nav-link"><i class="fa-solid fa-calendar-days"></i> Events</a>
+        <a href="team.html" class="nav-link"><i class="fa-solid fa-users"></i> Team</a>
+        <a href="apply.html" class="nav-link apply-btn-nav"><i class="fa-solid fa-paper-plane"></i> Apply Now</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" id="themeToggle" title="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════ HERO ═══════════════════════ -->
+  <section id="hero" class="hero-section">
+    <div class="hero-glow glow-1"></div>
+    <div class="hero-glow glow-2"></div>
+    <div class="container hero-container">
+
+      <div class="hero-content">
+        <div class="hero-badge"><i class="fa-solid fa-building-columns"></i> Thapar Institute of Engineering &amp;
+          Technology · Patiala</div>
+        <h1 class="hero-title">
+          Where Computer Science<br>
+          <span class="gradient-text">Meets Real Impact</span>
+        </h1>
+        <p class="hero-subtitle">
+          CS-CATALYST is the flagship departmental society of the CSE Department, TIET — driving national-level FDPs,
+          STCs, quantum computing workshops, expert talks, and student leadership programs.
+        </p>
+        <div class="hero-actions">
+          <a href="events.html" class="btn btn-primary btn-glow"><i class="fa-solid fa-calendar-star"></i> Explore
+            Events</a>
+          <a href="apply.html" class="btn btn-secondary"><i class="fa-solid fa-user-plus"></i> Join Organizing Panel</a>
+        </div>
+
+        <!-- Stats -->
+        <div class="hero-stats">
+          <div class="stat-item"><span class="stat-number" data-target="45">0</span><span
+              class="stat-plus">+</span><span class="stat-label">FDPs &amp; STCs</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat-item"><span class="stat-number" data-target="3200">0</span><span
+              class="stat-plus">+</span><span class="stat-label">Participants</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat-item"><span class="stat-number" data-target="12">0</span><span
+              class="stat-plus">+</span><span class="stat-label">Industry Partners</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat-item"><span class="stat-number" data-target="98">0</span><span
+              class="stat-percent">%</span><span class="stat-label">Positive Feedback</span></div>
+        </div>
+      </div>
+
+      <!-- Featured Event Card -->
+      <div class="hero-visual">
+        <div class="visual-card-glass">
+          <div class="card-header-tag"><span class="pulse-tag"></span> FEATURED UPCOMING EVENT</div>
+          <div class="qbit-mini-preview">
+            <div class="quantum-atom-icon"><i class="fa-solid fa-atom fa-spin-slow"></i></div>
+            <h3>Q-BIT @ TIET 2026</h3>
+            <p class="mini-tagline">5-Day Quantum Computing Training Program</p>
+            <p class="mini-meta"><i class="fa-solid fa-calendar"></i> Sept 07–11, 2026 &bull; Hybrid &bull; TIET Patiala
+            </p>
+            <div class="countdown-timer">
+              <div class="timer-unit"><span id="days">00</span><label>Days</label></div>
+              <div class="timer-unit"><span id="hours">00</span><label>Hours</label></div>
+              <div class="timer-unit"><span id="mins">00</span><label>Mins</label></div>
+              <div class="timer-unit"><span id="secs">00</span><label>Secs</label></div>
+            </div>
+            <a href="events.html#qbit" class="btn btn-outline btn-full"><i class="fa-solid fa-arrow-right"></i> View
+              Full Details &amp; Register</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ WHAT WE DO ═══════════════════════ -->
+  <section class="about-section section-padding">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag"><i class="fa-solid fa-atom"></i> Our Initiatives</span>
+        <h2 class="section-title">Catalyzing Excellence in Every Direction</h2>
+        <p class="section-description">From cutting-edge quantum workshops to national faculty development programs —
+          CS-CATALYST bridges academia and industry.</p>
+      </div>
+      <div class="grid-4-col features-grid">
+        <div class="feature-card">
+          <div class="feature-icon bg-cyan"><i class="fa-solid fa-chalkboard-user"></i></div>
+          <h3>Faculty Development</h3>
+          <p>National-level FDPs keeping educators at the forefront of emerging technologies, AI, cloud, and quantum
+            computing.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon bg-purple"><i class="fa-solid fa-laptop-code"></i></div>
+          <h3>Technical Workshops</h3>
+          <p>Intensive hands-on STCs and workshops with live platform access, industry mentors, and real project
+            challenges.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon bg-pink"><i class="fa-solid fa-microphone-lines"></i></div>
+          <h3>Expert Talks &amp; Seminars</h3>
+          <p>Keynote sessions by globally recognized researchers, tech leads, and industry innovators from top
+            organizations.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon bg-blue"><i class="fa-solid fa-people-roof"></i></div>
+          <h3>Student Leadership</h3>
+          <p>Grooming student organizers through event management, media, documentation, logistics, and public
+            relations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ FEATURED EVENT BANNER ═══════════════════════ -->
+  <section class="home-event-banner section-padding">
+    <div class="container">
+      <div class="heb-card">
+        <div class="heb-left">
+          <div class="heb-pill"><i class="fa-solid fa-star"></i> Latest Featured Event</div>
+          <h2 class="heb-title">Q-BIT @ TIET<br><span class="gradient-text">Quantum Computing</span><br>Training 2026
+          </h2>
+          <p class="heb-desc">A 5-day hybrid training program covering quantum fundamentals, Qiskit circuits, real
+            platform labs, and project showcases — organized by the CSE Department, TIET.</p>
+          <div class="heb-meta-row">
+            <span><i class="fa-solid fa-calendar text-cyan"></i> Sept 07–11, 2026</span>
+            <span><i class="fa-solid fa-location-dot text-pink"></i> Activity Space-2, TIET</span>
+            <span><i class="fa-solid fa-display text-purple"></i> Hybrid Mode</span>
+          </div>
+          <div class="heb-actions" style="display: flex; gap: 14px; flex-wrap: wrap;">
+            <a href="events.html#qbit" class="btn btn-secondary"><i class="fa-solid fa-compass"></i> Explore Event</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfl_ZsJTiYYQZ2ucpaowgyiuvSnWCJRNLWoytLC6oVrxW3EtQ/viewform"
+              target="_blank" class="btn btn-primary btn-glow"><i class="fa-solid fa-file-pen"></i> Register Now</a>
+          </div>
+        </div>
+        <div class="heb-right">
+          <img src="images/quantum.jpeg" alt="Q-BIT @ TIET — Quantum Computing Workshop Official Poster"
+            class="heb-img">
+          <div class="heb-cert-tag"><i class="fa-solid fa-certificate text-gold"></i> E-Certificate for All Participants
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ MEET LEADERSHIP TEASER ═══════════════════════ -->
+  <section class="leadership-teaser section-padding">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag"><i class="fa-solid fa-user-tie"></i> Department Leadership</span>
+        <h2 class="section-title">Guided by Distinguished Faculty</h2>
+        <p class="section-description">CS-CATALYST operates under the mentorship of experienced professors from the CSE
+          Department, TIET.</p>
+      </div>
+      <div class="teaser-faculty-row">
+        <div class="teaser-faculty-card">
+          <img src="images/neeraj.jpg" alt="Mr. Neeraj Kumar – HOD, CSE" class="teaser-img">
+          <h3>Mr. Neeraj Kumar</h3>
+          <p class="teaser-role"><i class="fa-solid fa-crown text-gold"></i> Head of Department — CSE</p>
+          <p class="teaser-inst">Thapar Institute of Engineering &amp; Technology</p>
+        </div>
+        <div class="teaser-faculty-card">
+          <img src="images/sandeep.jpg" alt="Dr. Sandeep Verma – Assistant Professor, CSE" class="teaser-img">
+          <h3>Dr. Sandeep Verma</h3>
+          <p class="teaser-role"><i class="fa-solid fa-star text-cyan"></i> Assistant Professor — CSE · CS-CATALYST
+            Coordinator</p>
+          <p class="teaser-inst">Thapar Institute of Engineering &amp; Technology</p>
+        </div>
+      </div>
+      <div class="text-center" style="margin-top:36px">
+        <a href="team.html" class="btn btn-secondary"><i class="fa-solid fa-users"></i> View Full Team Page</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ CTA JOIN PANEL ═══════════════════════ -->
+  <section class="cta-join section-padding">
+    <div class="container">
+      <div class="cta-card-glow">
+        <div class="cta-inner">
+          <i class="fa-solid fa-rocket cta-icon"></i>
+          <h2>Ready to Be Part of CS-CATALYST?</h2>
+          <p>Applications are now open for the CS-CATALYST Society Organizing Panel Team. Join us as an Event Manager,
+            Technical Lead, Designer, PR Coordinator, or Documentation Head.</p>
+          <div class="cta-actions">
+            <a href="apply.html" class="btn btn-primary btn-glow btn-lg"><i class="fa-solid fa-paper-plane"></i> Apply
+              for Organizing Panel</a>
+            <a href="about.html" class="btn btn-secondary"><i class="fa-solid fa-book-open"></i> Learn More About Us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Toast -->
+  <div id="toastContainer" class="toast-container"></div>
+  <script src="script.js"></script>
+</body>
+
+</html>
