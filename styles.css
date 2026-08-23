@@ -84,6 +84,14 @@ body.light-theme {
   --shadow-lg: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
 }
 
+body.light-theme .glow-1 {
+  background: rgba(2, 132, 199, 0.05) !important;
+}
+
+body.light-theme .glow-2 {
+  background: rgba(124, 58, 237, 0.04) !important;
+}
+
 body.light-theme .top-bar {
   background: linear-gradient(90deg, #e2e8f0 0%, #cbd5e1 50%, #e2e8f0 100%);
   border-bottom: 1px solid #cbd5e1;
@@ -146,9 +154,11 @@ body.light-theme .stat-box {
 body.light-theme .feature-card:hover,
 body.light-theme .apply-info-card:hover,
 body.light-theme .event-card:hover,
-body.light-theme .teaser-faculty-card:hover {
-  border-color: #0284c7;
-  box-shadow: 0 12px 30px rgba(2, 132, 199, 0.12);
+body.light-theme .teaser-faculty-card:hover,
+body.light-theme .team-card:hover {
+  transform: translateY(-8px) scale(1.02) !important;
+  border-color: #0284c7 !important;
+  box-shadow: 0 20px 40px rgba(124, 58, 237, 0.08), 0 0 15px rgba(2, 132, 199, 0.06) !important;
 }
 
 body.light-theme .visual-card-glass,
@@ -295,16 +305,8 @@ body {
   transition: background-color var(--transition-normal), color var(--transition-normal);
 }
 
-/* Particle Canvas Background */
 #quantumCanvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  pointer-events: none;
-  opacity: 0.7;
+  display: none !important;
 }
 
 a {
@@ -481,12 +483,12 @@ textarea {
 .logo-img {
   width: 42px;
   height: 42px;
-  border-radius: 8px;
   object-fit: contain;
-  box-shadow: 0 0 12px rgba(0, 242, 254, 0.25);
-  border: 1px solid var(--accent-cyan);
-  background: rgba(15, 23, 42, 0.6);
-  padding: 2px;
+  transition: transform var(--transition-fast);
+}
+
+.logo-img:hover {
+  transform: scale(1.08);
 }
 
 .logo-title {
@@ -3604,8 +3606,8 @@ body.light-theme .qbit-register-card,
 body.light-theme .dept-about-card,
 body.light-theme .stat-box {
   background: #ffffff !important;
-  border: 1px solid #cbd5e1 !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.03) !important;
   color: #0f172a !important;
 }
 
@@ -3643,8 +3645,8 @@ body.light-theme .leadership-teaser {
 }
 
 body.light-theme .site-footer {
-  background: #e2e8f0 !important;
-  border-top: 1px solid #cbd5e1 !important;
+  background: #f8fafc !important;
+  border-top: 1px solid #e2e8f0 !important;
   color: #0f172a !important;
 }
 
