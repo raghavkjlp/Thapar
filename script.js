@@ -298,7 +298,18 @@ function handleQbitRegister(e) {
    12. Event Details Modal Database
    -------------------------------------------------------------------------- */
 const eventDatabase = {
-  'drone-fdp': { title: 'National FDP on UAVs & Autonomous Drone Technology', category: 'COMPLETED FDP', meta: 'June 15–19, 2026 · IoT & Robotics Lab', desc: '5-Day Faculty Development Program covering drone dynamics, autonomous flight control, payload systems, path planning, and hands-on drone pilot training.', highlights: ['Hands-on Pilot Training', 'Drone Assembly Lab', '35+ Faculty Participants'] },
+  'drone-fdp': {
+    title: 'DRONE-FIT: Drone Flight & Industrial Training',
+    category: 'COMPLETED TRAINING',
+    meta: 'August 10–12, 2026 · LT-201, TIET',
+    desc: '3-Day hands-on training program covering drone flight training, industrial use cases and applications, mission planning and data analysis, safety, regulations, and best practices.',
+    highlights: [
+      'Hands-on Drone Flight Training',
+      'Industrial Use Cases & Applications',
+      'Mission Planning & Data Analysis',
+      'Safety, Regulations & Best Practices'
+    ]
+  },
   'cloud-fdp': { title: 'National FDP on Cloud Infrastructure & HPC Architectures', category: 'COMPLETED FDP', meta: 'May 14–18, 2026 · CSE Computer Lab 3', desc: '5-Day Faculty Development Program delivered by leading HPC researchers. Topics: Kubernetes, GPU acceleration, parallel MPI, cloud cost optimization.', highlights: ['50+ Faculty Delegates', '10 Lab Practicals', 'IBM & NVIDIA Guest Speakers'] },
   'llm-talk': { title: 'Expert Seminar: Scaling Large Language Models', category: 'UPCOMING TALK', meta: 'Oct 12, 2026 · TIET Auditorium', desc: 'Keynote on LLM alignment, LoRA/QLoRA fine-tuning, RAG evaluation benchmarks, and ethical AI deployment at scale.', highlights: ['AI Industry Lead Keynote', 'Live Q&A Session', 'Certificate of Participation'] },
   'stc-crypto': { title: 'STC: Modern Cryptography & Zero-Trust Security', category: 'COMPLETED STC', meta: 'Mar 02–06, 2026 · Cyber Security Lab', desc: 'Hands-on STC on post-quantum cryptographic primitives, zero-knowledge proofs, blockchain privacy, and network forensics.', highlights: ['Hands-on CTF Challenge', 'ZK Proof Demos', '100% Completion Rate'] },
