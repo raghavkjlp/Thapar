@@ -699,7 +699,7 @@ textarea {
 }
 
 .hero-subtitle {
-  font-size: 1.15rem;
+  font-size: 0.95rem;
   color: var(--text-muted);
   margin-bottom: 36px;
   max-width: 620px;
