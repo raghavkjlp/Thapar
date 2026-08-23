@@ -227,9 +227,6 @@ function injectFooter() {
           </div>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 CS-CATALYST Society &bull; Department of Computer Science &amp; Engineering, Thapar Institute of Engineering &amp; Technology (Deemed University), Patiala. All Rights Reserved.</p>
-      </div>
     </div>
   </footer>`;
 }
