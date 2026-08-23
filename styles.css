@@ -744,6 +744,12 @@ textarea {
   flex-direction: column;
 }
 
+.stat-num-wrap {
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
+}
+
 .stat-number {
   font-family: var(--font-heading);
   font-size: 2rem;
@@ -3719,13 +3725,15 @@ body.light-theme .social-icons a {
   /* Hero Stats Grid Fix for Mobile */
   .hero-stats {
     display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 16px 12px !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 16px 8px !important;
     width: 100% !important;
-    padding: 20px 14px !important;
+    max-width: 100% !important;
+    padding: 16px 10px !important;
     box-sizing: border-box !important;
     justify-content: center !important;
     align-items: center !important;
+    margin-top: 24px !important;
   }
 
   .stat-divider {
@@ -3738,15 +3746,31 @@ body.light-theme .social-icons a {
     align-items: center !important;
     justify-content: center !important;
     text-align: center !important;
+    min-width: 0 !important;
+    width: 100% !important;
+  }
+
+  .stat-num-wrap {
+    display: inline-flex !important;
+    align-items: baseline !important;
+    justify-content: center !important;
   }
 
   .stat-number {
-    font-size: 1.7rem !important;
+    font-size: 1.6rem !important;
+  }
+
+  .stat-plus,
+  .stat-percent {
+    font-size: 1.2rem !important;
   }
 
   .stat-label {
-    font-size: 0.78rem !important;
+    font-size: 0.75rem !important;
     text-align: center !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    margin-top: 2px !important;
   }
 
   /* Buttons & CTAs */
