@@ -3618,3 +3618,120 @@ body.light-theme .social-icons a {
   border: 1px solid #cbd5e1 !important;
   color: #0f172a !important;
 }
+
+/* ================================================================
+   MOBILE PHONE OPTIMIZATION (MAX-WIDTH: 576px & 768px)
+   ================================================================ */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+  }
+
+  .container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .section-padding {
+    padding: 40px 0 !important;
+  }
+
+  /* Hero Section */
+  .hero-title {
+    font-size: 2.1rem !important;
+    line-height: 1.25 !important;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem !important;
+  }
+
+  .page-hero {
+    padding: 85px 0 45px !important;
+  }
+
+  .page-hero-title {
+    font-size: 2rem !important;
+  }
+
+  .page-hero-sub {
+    font-size: 0.92rem !important;
+  }
+
+  /* Buttons & CTAs */
+  .hero-actions,
+  .cta-actions {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  .hero-actions .btn,
+  .cta-actions .btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  /* Cards & Layouts */
+  .heb-card,
+  .qbit-register-card,
+  .dept-about-card,
+  .hod-feature-card,
+  .coordinator-feature-card,
+  .form-wrapper-glass,
+  .cta-card-glow {
+    padding: 24px 18px !important;
+    border-radius: 18px !important;
+  }
+
+  .panel-domains-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .dept-about-stats {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .hod-img,
+  .coord-img {
+    width: 150px !important;
+    height: 180px !important;
+  }
+
+  .hod-name,
+  .coord-name {
+    font-size: 1.8rem !important;
+  }
+
+  .heb-title {
+    font-size: 1.8rem !important;
+  }
+
+  /* Google Form Container */
+  .google-form-container iframe {
+    height: 650px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.8rem !important;
+  }
+
+  .page-hero-title {
+    font-size: 1.7rem !important;
+  }
+
+  .dept-about-stats {
+    grid-template-columns: 1fr !important;
+  }
+
+  .stat-box {
+    padding: 16px 10px !important;
+  }
+
+  .btn {
+    font-size: 0.9rem !important;
+    padding: 10px 18px !important;
+  }
+}
