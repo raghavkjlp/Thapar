@@ -638,6 +638,11 @@ textarea {
   font-weight: 600;
   font-size: 0.875rem;
   margin-bottom: 24px;
+  max-width: 100%;
+  box-sizing: border-box;
+  white-space: normal;
+  word-break: break-word;
+  text-align: center;
 }
 
 .hero-title {
@@ -736,7 +741,9 @@ textarea {
   border: 1px solid var(--border-glass);
   padding: 20px 28px;
   border-radius: var(--radius-md);
-  width: fit-content;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .stat-item {
@@ -3626,9 +3633,9 @@ body.light-theme .social-icons a {
 }
 
 /* ================================================================
-   MOBILE PHONE OPTIMIZATION (MAX-WIDTH: 576px & 768px)
+   MOBILE & TABLET RESPONSIVE OPTIMIZATION (MAX-WIDTH: 1024px)
    ================================================================ */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   html, body {
     overflow-x: hidden;
   }
