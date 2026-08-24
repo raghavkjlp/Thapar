@@ -107,7 +107,7 @@
   <script src="script.js"></script>
   <script>
     // Local Script to manage Photo Gallery & Lightbox
-    const API_URL = 'http://localhost:5000/api/gallery';
+    const API_URL = 'https://thapar.onrender.com/api/gallery';
 
     // Local Fallback Data (Unsplash curated library matching CSE / Society Events)
     const fallbackAlbums = [
@@ -234,21 +234,35 @@
 
     // Render Tabs and Images
     function renderGallery(albums) {
-      currentAlbums = albums;
+      const albumTitles = {
+        'q-bit': 'Q-BIT Quantum Computing Workshop 2026',
+        'drone': 'DRONE-FIT: Drone Flight & Industrial Training',
+        'drone-fit': 'DRONE-FIT: Drone Flight & Industrial Training',
+        'cloud-fdp': 'Cloud Infrastructure & HPC FDP',
+        'stc-crypto': 'Modern Cryptography STC',
+        'open-day': 'CSE Department Open Day Expo',
+        'general': 'CS-CATALYST Activities'
+      };
+
+      // Map raw titles to pretty ones if available
+      currentAlbums = albums.map(album => ({
+        ...album,
+        title: albumTitles[album.id] || album.title
+      }));
       
       const filterTabsContainer = document.getElementById('albumFilterTabs');
       const gridContainer = document.getElementById('galleryGrid');
 
       // 1. Render Album Tabs (clear old dynamic ones first)
       const staticTabs = `<button class="filter-btn active" data-album="all" onclick="filterAlbum('all')">All Albums</button>`;
-      const dynamicTabs = albums.map(album => 
+      const dynamicTabs = currentAlbums.map(album => 
         `<button class="filter-btn" data-album="${album.id}" onclick="filterAlbum('${album.id}')">${album.title.split(':')[0]}</button>`
       ).join('');
       filterTabsContainer.innerHTML = staticTabs + dynamicTabs;
 
       // 2. Accumulate all images for the "All" view
       filteredImages = [];
-      albums.forEach(album => {
+      currentAlbums.forEach(album => {
         album.images.forEach(img => {
           filteredImages.push({
             ...img,

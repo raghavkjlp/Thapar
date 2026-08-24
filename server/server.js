@@ -210,6 +210,7 @@ app.get('/api/gallery', async (req, res) => {
       const titles = {
         'q-bit': 'Q-BIT Quantum Computing Workshop 2026',
         'drone-fit': 'DRONE-FIT: Drone Flight & Industrial Training',
+        'drone': 'DRONE-FIT: Drone Flight & Industrial Training',
         'cloud-fdp': 'Cloud Infrastructure & HPC FDP',
         'stc-crypto': 'Modern Cryptography STC',
         'open-day': 'CSE Department Open Day Expo',
