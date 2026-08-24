@@ -1,0 +1,12 @@
+# Dependency directories
+node_modules/
+server/node_modules/
+
+# Local env files (contain private api keys)
+.env
+server/.env
+*.env
+
+# OS files
+.DS_Store
+Thumbs.db

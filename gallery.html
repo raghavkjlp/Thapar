@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Photo Gallery — CS-CATALYST Society, CSE Department, TIET Patiala. View pictures of technical events, workshops, FDPs and seminars including Q-BIT, DRONE-FIT and more.">
+  <title>Photo Gallery | CS-CATALYST Society — CSE TIET</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css?v=2">
+</head>
+
+<body class="light-theme">
+  <canvas id="quantumCanvas"></canvas>
+
+  <!-- NAVBAR -->
+  <header class="navbar-header" id="navbar">
+    <div class="container navbar-container">
+      <a href="index.html" class="brand-logo">
+        <img src="images/logo.png" alt="CS-CATALYST Logo" class="logo-img">
+        <div class="logo-text">
+          <span class="logo-title">CS-CATALYST</span>
+          <span class="logo-sub">CSE Dept · TIET Patiala</span>
+        </div>
+      </a>
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="about.html" class="nav-link"><i class="fa-solid fa-circle-info"></i> About</a>
+        <a href="events.html" class="nav-link"><i class="fa-solid fa-calendar-days"></i> Events</a>
+        <a href="gallery.html" class="nav-link active"><i class="fa-solid fa-images"></i> Gallery</a>
+        <a href="team.html" class="nav-link"><i class="fa-solid fa-users"></i> Team</a>
+        <a href="contact.html" class="nav-link"><i class="fa-solid fa-envelope"></i> Contact</a>
+        <a href="apply.html" class="nav-link apply-btn-nav"><i class="fa-solid fa-paper-plane"></i> Apply Now</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="hero-glow glow-1"></div>
+    <div class="hero-glow glow-2"></div>
+    <div class="container page-hero-container">
+      <div class="page-hero-badge"><i class="fa-solid fa-images"></i> CS-CATALYST Memories</div>
+      <h1 class="page-hero-title">Event <span class="gradient-text">Photo Gallery</span></h1>
+      <p class="page-hero-sub">Explore highlights and captured moments from our flagship workshops, national-level faculty development programs, and technical expos.</p>
+    </div>
+  </section>
+
+  <!-- GALLERY MAIN SECTION -->
+  <section class="gallery-section">
+    <div class="container">
+      
+      <!-- Album Filter Bar -->
+      <div class="event-filter-bar" style="margin-bottom: 24px;">
+        <div class="filter-tabs" id="albumFilterTabs">
+          <button class="filter-btn active" data-album="all">All Albums</button>
+          <!-- Dynamic album tabs will load here -->
+        </div>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="gallery-grid" id="galleryGrid">
+        <!-- Dynamic gallery images will load here -->
+        <div style="grid-column: 1/-1; text-align: center; padding: 40px; color: var(--text-dim);">
+          <i class="fa-solid fa-spinner fa-spin fa-2x" style="color: var(--accent-cyan);"></i>
+          <p style="margin-top: 10px;">Loading gallery moments...</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox-overlay" id="galleryLightbox">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightboxCloseBtn">&times;</button>
+      
+      <button class="lightbox-nav lightbox-prev" id="lightboxPrevBtn" aria-label="Previous image">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      
+      <img src="" alt="" class="lightbox-img" id="lightboxImg">
+      
+      <button class="lightbox-nav lightbox-next" id="lightboxNextBtn" aria-label="Next image">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+      
+      <p class="lightbox-caption" id="lightboxCaption">Image Caption</p>
+      <span class="lightbox-album" id="lightboxAlbumTag">Album Name</span>
+    </div>
+  </div>
+
+  <!-- Shared Footer Placement -->
+  <div id="footer-placeholder"></div>
+
+  <div id="toastContainer" class="toast-container"></div>
+
+  <script src="script.js"></script>
+  <script>
+    // Local Script to manage Photo Gallery & Lightbox
+    const API_URL = 'http://localhost:5000/api/gallery';
+
+    // Local Fallback Data (Unsplash curated library matching CSE / Society Events)
+    const fallbackAlbums = [
+      {
+        id: "q-bit",
+        title: "Q-BIT Quantum Computing Workshop 2026",
+        images: [
+          {
+            id: "q1",
+            name: "Quantum Superposition Seminar",
+            url: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&q=80&w=1200",
+            thumbnailUrl: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&q=80&w=400"
+          },
+          {
+            id: "q2",
+            name: "Hands-on Qiskit Laboratory",
+            url: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=1200",
+            thumbnailUrl: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=400"
+          },
+          {
+            id: "q3",
+            name: "Participant Project Presentations",
+            url: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=1200",
+            thumbnailUrl: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=400"
+          },
+          {
+            id: "q4",
+            name: "Q-BIT Organizing Panel Team",
+            url: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1200",
+            thumbnailUrl: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400"
+          }
+        ]
+      },
+      {
+        id: "drone-fit",
+        title: "DRONE-FIT: Drone Flight & Industrial Training",
+        images: [
+          {
+            id: "d1",
+            name: "Drone Assembly & Hardware Calibration",
+            url: "https://images.unsplash.com/photo-1527977966376-1c8408f9f108?auto=format&fit=crop&q=80&w=1200",
+            thumbnailUrl: "https://images.unsplash.com/photo-1527977966376-1c8408f9f108?auto=format&fit=crop&q=80&w=400"
+          },
+          {
+            id: "d2",
+            name: "Outdoor Flight Field Training",
+            url: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&q=80&w=1200",
+            thumbnailUrl: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&q=80&w=400"
+          },
+          {
+            id: "d3",
+            name: "GIS Mapping and Photogrammetry Analysis",
+            url: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200",
+            thumbnailUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=400"
+          }
+        ]
+      },
+      {
+        id: "cloud-fdp",
+        title: "National FDP on Cloud Infrastructure",
+        images: [
+          {
+            id: "c1",
+            name: "Kubernetes Cluster Provisioning",
+            url: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=1200",
+            thumbnailUrl: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=400"
+          },
+          {
+            id: "c2",
+            name: "HPC Architecture Guest Lecture",
+            url: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=1200",
+            thumbnailUrl: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=400"
+          },
+          {
+            id: "c3",
+            name: "Faculty Lab Practical Session",
+            url: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=1200",
+            thumbnailUrl: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=400"
+          }
+        ]
+      },
+      {
+        id: "open-day",
+        title: "CSE Department Open Day Expo",
+        images: [
+          {
+            id: "o1",
+            name: "Student Innovation Project Stalls",
+            url: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=1200",
+            thumbnailUrl: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=400"
+          },
+          {
+            id: "o2",
+            name: "Project Evaluation by Industry Judges",
+            url: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&q=80&w=1200",
+            thumbnailUrl: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&q=80&w=400"
+          },
+          {
+            id: "o3",
+            name: "Awards Ceremony & Keynote Address",
+            url: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&q=80&w=1200",
+            thumbnailUrl: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&q=80&w=400"
+          }
+        ]
+      }
+    ];
+
+    let currentAlbums = [];
+    let filteredImages = [];
+    let currentImageIndex = 0;
+
+    // Load Gallery Data
+    async function loadGallery() {
+      try {
+        const response = await fetch(API_URL);
+        if (!response.ok) throw new Error('API server unreachable');
+        const data = await response.json();
+        renderGallery(data);
+      } catch (error) {
+        console.warn('Backend API connection failed. Serving fallback gallery albums.', error);
+        renderGallery(fallbackAlbums);
+      }
+    }
+
+    // Render Tabs and Images
+    function renderGallery(albums) {
+      currentAlbums = albums;
+      
+      const filterTabsContainer = document.getElementById('albumFilterTabs');
+      const gridContainer = document.getElementById('galleryGrid');
+
+      // 1. Render Album Tabs (clear old dynamic ones first)
+      const staticTabs = `<button class="filter-btn active" data-album="all" onclick="filterAlbum('all')">All Albums</button>`;
+      const dynamicTabs = albums.map(album => 
+        `<button class="filter-btn" data-album="${album.id}" onclick="filterAlbum('${album.id}')">${album.title.split(':')[0]}</button>`
+      ).join('');
+      filterTabsContainer.innerHTML = staticTabs + dynamicTabs;
+
+      // 2. Accumulate all images for the "All" view
+      filteredImages = [];
+      albums.forEach(album => {
+        album.images.forEach(img => {
+          filteredImages.push({
+            ...img,
+            albumId: album.id,
+            albumTitle: album.title
+          });
+        });
+      });
+
+      // 3. Render Grid Items
+      renderGrid(filteredImages);
+    }
+
+    // Render Grid Items
+    function renderGrid(imagesList) {
+      const gridContainer = document.getElementById('galleryGrid');
+      if (imagesList.length === 0) {
+        gridContainer.innerHTML = `
+          <div style="grid-column: 1/-1; text-align: center; padding: 60px; color: var(--text-dim);">
+            <i class="fa-solid fa-folder-open fa-3x" style="margin-bottom:12px; color: var(--border-glass);"></i>
+            <p>No images found in this album.</p>
+          </div>
+        `;
+        return;
+      }
+
+      gridContainer.innerHTML = imagesList.map((img, index) => `
+        <div class="gallery-item" onclick="openLightbox(${index})">
+          <div class="gallery-img-container">
+            <img src="${img.thumbnailUrl}" alt="${img.name}" class="gallery-img" loading="lazy">
+            <div class="gallery-overlay">
+              <div class="gallery-overlay-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+              <h4 class="gallery-caption">${img.name}</h4>
+              <span class="gallery-album-tag">${img.albumTitle.split(':')[0]}</span>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Filter Album onClick
+    function filterAlbum(albumId) {
+      // Manage Active Tab Styling
+      const buttons = document.querySelectorAll('#albumFilterTabs .filter-btn');
+      buttons.forEach(btn => {
+        if (btn.getAttribute('data-album') === albumId) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+
+      // Filter Data
+      if (albumId === 'all') {
+        filteredImages = [];
+        currentAlbums.forEach(album => {
+          album.images.forEach(img => {
+            filteredImages.push({
+              ...img,
+              albumId: album.id,
+              albumTitle: album.title
+            });
+          });
+        });
+      } else {
+        const selected = currentAlbums.find(a => a.id === albumId);
+        filteredImages = selected ? selected.images.map(img => ({
+          ...img,
+          albumId: selected.id,
+          albumTitle: selected.title
+        })) : [];
+      }
+
+      renderGrid(filteredImages);
+    }
+
+    // Lightbox Functionality
+    const lightbox = document.getElementById('galleryLightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const lightboxAlbumTag = document.getElementById('lightboxAlbumTag');
+
+    function openLightbox(index) {
+      currentImageIndex = index;
+      const imgData = filteredImages[currentImageIndex];
+      if (!imgData) return;
+
+      lightboxImg.src = imgData.url;
+      lightboxCaption.innerText = imgData.name;
+      lightboxAlbumTag.innerText = imgData.albumTitle;
+      
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden'; // Lock background scrolling
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+      lightboxImg.src = ''; // Clear image src to stop load
+    }
+
+    function navigateLightbox(dir) {
+      currentImageIndex += dir;
+      
+      // Loop navigation bounds
+      if (currentImageIndex >= filteredImages.length) {
+        currentImageIndex = 0;
+      } else if (currentImageIndex < 0) {
+        currentImageIndex = filteredImages.length - 1;
+      }
+
+      const imgData = filteredImages[currentImageIndex];
+      if (!imgData) return;
+
+      // Soft transition or immediate swap
+      lightboxImg.style.opacity = '0.5';
+      setTimeout(() => {
+        lightboxImg.src = imgData.url;
+        lightboxCaption.innerText = imgData.name;
+        lightboxAlbumTag.innerText = imgData.albumTitle;
+        lightboxImg.style.opacity = '1';
+      }, 50);
+    }
+
+    // Attach Event Listeners
+    document.getElementById('lightboxCloseBtn').addEventListener('click', closeLightbox);
+    document.getElementById('lightboxPrevBtn').addEventListener('click', () => navigateLightbox(-1));
+    document.getElementById('lightboxNextBtn').addEventListener('click', () => navigateLightbox(1));
+    
+    // Close lightbox on clicking backdrop
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    // Keyboard Event Navigation
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') navigateLightbox(-1);
+      if (e.key === 'ArrowRight') navigateLightbox(1);
+    });
+
+    // Load elements on initialization
+    window.addEventListener('DOMContentLoaded', loadGallery);
+  </script>
+</body>
+
+</html>

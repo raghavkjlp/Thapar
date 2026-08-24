@@ -123,8 +123,9 @@ function injectFooter() {
             <li><a href="index.html"><i class="fa-solid fa-angle-right"></i> Home</a></li>
             <li><a href="about.html"><i class="fa-solid fa-angle-right"></i> About CS-CATALYST</a></li>
             <li><a href="events.html"><i class="fa-solid fa-angle-right"></i> Events &amp; FDPs</a></li>
-            <li><a href="events.html#qbit"><i class="fa-solid fa-angle-right"></i> Q-BIT 2026 Workshop</a></li>
+            <li><a href="gallery.html"><i class="fa-solid fa-angle-right"></i> Photo Gallery</a></li>
             <li><a href="team.html"><i class="fa-solid fa-angle-right"></i> Faculty &amp; Team</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-angle-right"></i> Contact Us</a></li>
             <li><a href="apply.html"><i class="fa-solid fa-angle-right"></i> Apply for Panel</a></li>
           </ul>
         </div>
@@ -133,7 +134,11 @@ function injectFooter() {
           <h4>Contact</h4>
           <p class="contact-info"><i class="fa-solid fa-location-dot"></i> CSE Department, Thapar Institute, Patiala, Punjab — 147004</p>
           <p class="contact-info"><i class="fa-solid fa-envelope"></i> sandeep.verma@thapar.edu</p>
-
+          <div class="social-icons" style="margin-top: 15px;">
+            <a href="https://linkedin.com/company/cs-catalyst-tiet" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://instagram.com/cs_catalyst_tiet" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://wa.me/919914374003" target="_blank" title="WhatsApp Support"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
         </div>
       </div>
     </div>

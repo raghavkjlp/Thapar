@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Contact CS-CATALYST Society — Get in touch with the Computer Science & Engineering Department society at Thapar Institute (TIET), Patiala. Email, phone, map, and social media handles.">
+  <title>Contact Us | CS-CATALYST Society — CSE TIET</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css?v=2">
+</head>
+
+<body class="light-theme">
+  <canvas id="quantumCanvas"></canvas>
+
+  <!-- NAVBAR -->
+  <header class="navbar-header" id="navbar">
+    <div class="container navbar-container">
+      <a href="index.html" class="brand-logo">
+        <img src="images/logo.png" alt="CS-CATALYST Logo" class="logo-img">
+        <div class="logo-text">
+          <span class="logo-title">CS-CATALYST</span>
+          <span class="logo-sub">CSE Dept · TIET Patiala</span>
+        </div>
+      </a>
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="about.html" class="nav-link"><i class="fa-solid fa-circle-info"></i> About</a>
+        <a href="events.html" class="nav-link"><i class="fa-solid fa-calendar-days"></i> Events</a>
+        <a href="gallery.html" class="nav-link"><i class="fa-solid fa-images"></i> Gallery</a>
+        <a href="team.html" class="nav-link"><i class="fa-solid fa-users"></i> Team</a>
+        <a href="contact.html" class="nav-link active"><i class="fa-solid fa-envelope"></i> Contact</a>
+        <a href="apply.html" class="nav-link apply-btn-nav"><i class="fa-solid fa-paper-plane"></i> Apply Now</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="hero-glow glow-1"></div>
+    <div class="hero-glow glow-2"></div>
+    <div class="container page-hero-container">
+      <div class="page-hero-badge"><i class="fa-solid fa-envelope"></i> Contact Us</div>
+      <h1 class="page-hero-title">Get in <span class="gradient-text">Touch</span></h1>
+      <p class="page-hero-sub">Have queries about registrations, collaborations, or upcoming programs? Reach out to the CS-CATALYST organizing team.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT GRID SECTION -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="grid-2-col" style="gap: 40px; align-items: start;">
+        
+        <!-- Left: Contact Information Cards -->
+        <div class="contact-info-cards" style="display: flex; flex-direction: column; gap: 24px;">
+          
+          <!-- Card 1: Venue/Address -->
+          <div class="feature-card" style="display: flex; gap: 20px; align-items: flex-start; padding: 28px;">
+            <div class="feature-icon bg-cyan" style="margin-bottom: 0; flex-shrink: 0; width: 50px; height: 50px; border-radius: 12px; font-size: 1.3rem;">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div>
+              <h3 style="font-size: 1.15rem; margin-bottom: 6px;">Our Location</h3>
+              <p style="font-size: 0.92rem; line-height: 1.6; color: var(--text-muted);">
+                Computer Science & Engineering Department,<br>
+                Thapar Institute of Engineering & Technology,<br>
+                Bhadson Road, Patiala, Punjab - 147004
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 2: Email -->
+          <div class="feature-card" style="display: flex; gap: 20px; align-items: flex-start; padding: 28px;">
+            <div class="feature-icon bg-purple" style="margin-bottom: 0; flex-shrink: 0; width: 50px; height: 50px; border-radius: 12px; font-size: 1.3rem;">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div>
+              <h3 style="font-size: 1.15rem; margin-bottom: 6px;">Email Address</h3>
+              <p style="font-size: 0.92rem; line-height: 1.6; color: var(--text-muted);">
+                For official query and support:<br>
+                <a href="mailto:sandeep.verma@thapar.edu" style="color: var(--accent-cyan); font-weight: 500;">sandeep.verma@thapar.edu</a>
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 3: Phone / WhatsApp -->
+          <div class="feature-card" style="display: flex; gap: 20px; align-items: flex-start; padding: 28px;">
+            <div class="feature-icon bg-pink" style="margin-bottom: 0; flex-shrink: 0; width: 50px; height: 50px; border-radius: 12px; font-size: 1.3rem;">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <div>
+              <h3 style="font-size: 1.15rem; margin-bottom: 6px;">Phone & WhatsApp</h3>
+              <p style="font-size: 0.92rem; line-height: 1.6; color: var(--text-muted);">
+                WhatsApp Helpline: <strong style="color: var(--text-main);">+91-9914374003</strong><br>
+                Available during event hours (9:00 AM - 5:00 PM IST)
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 4: Social Media Channels -->
+          <div class="feature-card" style="padding: 28px;">
+            <h3 style="font-size: 1.15rem; margin-bottom: 12px;">Connect With Us</h3>
+            <p style="font-size: 0.92rem; color: var(--text-muted); margin-bottom: 16px;">Follow our official pages for the latest updates, event recordings, and highlights.</p>
+            <div class="social-icons" style="margin-top: 0;">
+              <a href="https://linkedin.com/company/cs-catalyst-tiet" target="_blank" title="LinkedIn" aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a href="https://instagram.com/cs_catalyst_tiet" target="_blank" title="Instagram" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="https://wa.me/919914374003" target="_blank" title="WhatsApp Support" aria-label="WhatsApp">
+                <i class="fa-brands fa-whatsapp"></i>
+              </a>
+              <a href="mailto:sandeep.verma@thapar.edu" title="Email Contact" aria-label="Email">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: Contact Form -->
+        <div class="form-wrapper-glass" style="margin-top: 0; padding: 36px;">
+          <span class="form-tag-badge" style="margin-bottom: 16px;"><i class="fa-solid fa-paper-plane"></i> SEND A MESSAGE</span>
+          <h2 style="font-size: 1.7rem; font-family: var(--font-heading); font-weight: 800; margin-bottom: 10px; color: var(--text-main);">Send Us a Query</h2>
+          <p style="font-size: 0.92rem; color: var(--text-muted); margin-bottom: 24px;">Got a question? Submit the form below and our team will get back to you shortly.</p>
+
+          <form id="contactQueryForm" onsubmit="handleContactSubmit(event)">
+            <div class="form-group" style="margin-bottom: 20px;">
+              <label for="contactName" style="display: block; font-size: 0.88rem; font-weight: 600; margin-bottom: 8px; color: var(--text-main);">Full Name</label>
+              <input type="text" id="contactName" required placeholder="John Doe" 
+                style="width: 100%; padding: 12px 16px; border: 1px solid var(--border-glass); border-radius: var(--radius-sm); background: var(--bg-glass); color: var(--text-main); font-family: inherit; font-size: 0.95rem; box-sizing: border-box;">
+            </div>
+
+            <div class="form-group" style="margin-bottom: 20px;">
+              <label for="contactEmail" style="display: block; font-size: 0.88rem; font-weight: 600; margin-bottom: 8px; color: var(--text-main);">Email Address</label>
+              <input type="email" id="contactEmail" required placeholder="john@example.com" 
+                style="width: 100%; padding: 12px 16px; border: 1px solid var(--border-glass); border-radius: var(--radius-sm); background: var(--bg-glass); color: var(--text-main); font-family: inherit; font-size: 0.95rem; box-sizing: border-box;">
+            </div>
+
+            <div class="form-group" style="margin-bottom: 20px;">
+              <label for="contactSubject" style="display: block; font-size: 0.88rem; font-weight: 600; margin-bottom: 8px; color: var(--text-main);">Subject</label>
+              <input type="text" id="contactSubject" required placeholder="Q-BIT Registration Query" 
+                style="width: 100%; padding: 12px 16px; border: 1px solid var(--border-glass); border-radius: var(--radius-sm); background: var(--bg-glass); color: var(--text-main); font-family: inherit; font-size: 0.95rem; box-sizing: border-box;">
+            </div>
+
+            <div class="form-group" style="margin-bottom: 24px;">
+              <label for="contactMessage" style="display: block; font-size: 0.88rem; font-weight: 600; margin-bottom: 8px; color: var(--text-main);">Message</label>
+              <textarea id="contactMessage" required placeholder="Type your message here..." rows="5"
+                style="width: 100%; padding: 12px 16px; border: 1px solid var(--border-glass); border-radius: var(--radius-sm); background: var(--bg-glass); color: var(--text-main); font-family: inherit; font-size: 0.95rem; box-sizing: border-box; resize: vertical; min-height: 120px;"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-glow btn-full" style="width: 100%; padding: 14px;">
+              <i class="fa-solid fa-paper-plane"></i> Send Message
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GOOGLE MAPS EMBED SECTION -->
+  <section class="section-padding" style="padding-top: 0;">
+    <div class="container">
+      <div class="section-header text-center" style="margin-bottom: 30px;">
+        <span class="section-tag"><i class="fa-solid fa-map-location-dot"></i> Interactive Map</span>
+        <h2 class="section-title" style="font-size: 2rem;">Find Us on Campus</h2>
+      </div>
+      <div class="map-embed-wrapper" style="border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-glass); box-shadow: 0 10px 30px rgba(0,0,0,0.05); background: var(--bg-glass); line-height: 0;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3432.327571214061!2d76.3622416!3d30.3524259!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391028ab86533df7%3A0xbe6376ef0c224ec5!2sThapar%20Institute%20of%20Engineering%20and%20Technology!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+          width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shared Footer Placement -->
+  <div id="footer-placeholder"></div>
+
+  <div id="toastContainer" class="toast-container"></div>
+
+  <script src="script.js"></script>
+  <script>
+    // Local script to handle Form Submission
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('contactName').value.trim();
+      const email = document.getElementById('contactEmail').value.trim();
+      const subject = document.getElementById('contactSubject').value.trim();
+      const message = document.getElementById('contactMessage').value.trim();
+
+      // Simulate API call success
+      if (typeof showToast === 'function') {
+        showToast(`Thank you, ${name}! Your query regarding "${subject}" has been sent.`, 'success');
+      } else {
+        alert(`Thank you, ${name}! Your query has been submitted successfully.`);
+      }
+      
+      document.getElementById('contactQueryForm').reset();
+    }
+  </script>
+</body>
+
+</html>
