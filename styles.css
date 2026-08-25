@@ -668,7 +668,7 @@ textarea {
   width: auto;
   max-width: 500px;
   object-fit: contain;
-  animation: dance 6s ease-in-out infinite;
+  animation: dance 3s ease-in-out infinite;
   transform-origin: center;
 }
 
