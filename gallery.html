@@ -51,14 +51,15 @@
     <div class="container page-hero-container">
       <div class="page-hero-badge"><i class="fa-solid fa-images"></i> CS-CATALYST Memories</div>
       <h1 class="page-hero-title">Event <span class="gradient-text">Photo Gallery</span></h1>
-      <p class="page-hero-sub">Explore highlights and captured moments from our flagship workshops, national-level faculty development programs, and technical expos.</p>
+      <p class="page-hero-sub">Explore highlights and captured moments from our flagship workshops, national-level
+        faculty development programs, and technical expos.</p>
     </div>
   </section>
 
   <!-- GALLERY MAIN SECTION -->
   <section class="gallery-section">
     <div class="container">
-      
+
       <!-- Album Filter Bar -->
       <div class="event-filter-bar" style="margin-bottom: 24px;">
         <div class="filter-tabs" id="albumFilterTabs">
@@ -83,17 +84,17 @@
   <div class="lightbox-overlay" id="galleryLightbox">
     <div class="lightbox-content">
       <button class="lightbox-close" id="lightboxCloseBtn">&times;</button>
-      
+
       <button class="lightbox-nav lightbox-prev" id="lightboxPrevBtn" aria-label="Previous image">
         <i class="fa-solid fa-chevron-left"></i>
       </button>
-      
+
       <img src="" alt="" class="lightbox-img" id="lightboxImg">
-      
+
       <button class="lightbox-nav lightbox-next" id="lightboxNextBtn" aria-label="Next image">
         <i class="fa-solid fa-chevron-right"></i>
       </button>
-      
+
       <p class="lightbox-caption" id="lightboxCaption">Image Caption</p>
       <span class="lightbox-album" id="lightboxAlbumTag">Album Name</span>
     </div>
@@ -249,13 +250,13 @@
         ...album,
         title: albumTitles[album.id] || album.title
       }));
-      
+
       const filterTabsContainer = document.getElementById('albumFilterTabs');
       const gridContainer = document.getElementById('galleryGrid');
 
       // 1. Render Album Tabs (clear old dynamic ones first)
       const staticTabs = `<button class="filter-btn active" data-album="all" onclick="filterAlbum('all')">All Albums</button>`;
-      const dynamicTabs = currentAlbums.map(album => 
+      const dynamicTabs = currentAlbums.map(album =>
         `<button class="filter-btn" data-album="${album.id}" onclick="filterAlbum('${album.id}')">${album.title.split(':')[0]}</button>`
       ).join('');
       filterTabsContainer.innerHTML = staticTabs + dynamicTabs;
@@ -353,7 +354,7 @@
       lightboxImg.src = imgData.url;
       lightboxCaption.innerText = imgData.name;
       lightboxAlbumTag.innerText = imgData.albumTitle;
-      
+
       lightbox.classList.add('active');
       document.body.style.overflow = 'hidden'; // Lock background scrolling
     }
@@ -366,7 +367,7 @@
 
     function navigateLightbox(dir) {
       currentImageIndex += dir;
-      
+
       // Loop navigation bounds
       if (currentImageIndex >= filteredImages.length) {
         currentImageIndex = 0;
@@ -391,7 +392,7 @@
     document.getElementById('lightboxCloseBtn').addEventListener('click', closeLightbox);
     document.getElementById('lightboxPrevBtn').addEventListener('click', () => navigateLightbox(-1));
     document.getElementById('lightboxNextBtn').addEventListener('click', () => navigateLightbox(1));
-    
+
     // Close lightbox on clicking backdrop
     lightbox.addEventListener('click', (e) => {
       if (e.target === lightbox) closeLightbox();

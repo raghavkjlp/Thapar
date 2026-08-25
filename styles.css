@@ -616,7 +616,7 @@ textarea {
    -------------------------------------------------------------------------- */
 .hero-section {
   position: relative;
-  padding: 90px 0 110px;
+  padding: 25px 0 110px;
   overflow: hidden;
 }
 
@@ -649,26 +649,65 @@ textarea {
   grid-template-columns: 1.2fr 0.8fr;
   gap: 48px;
   align-items: center;
+
 }
+
+
 
 .hero-brand-logos {
+  position: relative;
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 16px;
-  margin-bottom: 18px;
-  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 30px;
 }
 
-.hero-brand-img {
-  height: 140px;
+.hero-brand-img:not(.thapar-img) {
+  height: 260px;
   width: auto;
-  max-width: 400px;
+  max-width: 500px;
   object-fit: contain;
-  transition: transform var(--transition-fast);
+  animation: dance 6s ease-in-out infinite;
+  transform-origin: center;
 }
 
-.hero-brand-img:hover {
-  transform: scale(1.04);
+.hero-brand-img.thapar-img {
+  position: absolute;
+  right: 670px;
+  top: 10%;
+  transform: translateY(-50%);
+  height: 70px;
+  width: auto;
+  opacity: 0.85;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.hero-brand-img.thapar-img:hover {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.05);
+}
+
+@keyframes dance {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  25% {
+    transform: translateY(-6px) rotate(-1deg) scale(1.02);
+  }
+
+  50% {
+    transform: translateY(0) rotate(0deg) scale(1.04);
+  }
+
+  75% {
+    transform: translateY(-4px) rotate(1deg) scale(1.02);
+  }
+
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
 }
 
 .hero-badge {
@@ -838,6 +877,8 @@ textarea {
   padding: 28px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
   position: relative;
+  margin-top: -75px;
+  /* Push the featured event card up */
 }
 
 .card-header-tag {
@@ -2732,7 +2773,7 @@ textarea:focus {
   flex-wrap: wrap;
 }
 
-/* About � Mission/Vision */
+/* About   Mission/Vision */
 .mv-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -3749,11 +3790,20 @@ body.light-theme .social-icons a:hover {
   }
 
   .hero-brand-logos {
-    justify-content: center !important;
+    flex-direction: column !important;
+    gap: 15px !important;
+    position: static !important;
   }
 
-  .hero-brand-img {
-    height: 80px !important;
+  .hero-brand-img:not(.thapar-img) {
+    height: 130px !important;
+    animation: dance 6s ease-in-out infinite !important;
+  }
+
+  .hero-brand-img.thapar-img {
+    position: static !important;
+    transform: none !important;
+    height: 55px !important;
   }
 
   .hero-badge {
@@ -3869,6 +3919,7 @@ body.light-theme .social-icons a:hover {
   .visual-card-glass {
     padding: 24px 18px !important;
     border-radius: 18px !important;
+    margin-top: 0 !important;
   }
 
   .panel-domains-grid {
@@ -3902,8 +3953,12 @@ body.light-theme .social-icons a:hover {
 }
 
 @media (max-width: 480px) {
-  .hero-brand-img {
-    height: 55px !important;
+  .hero-brand-img:not(.thapar-img) {
+    height: 100px !important;
+  }
+
+  .hero-brand-img.thapar-img {
+    height: 40px !important;
   }
 
   .hero-title {
@@ -4233,6 +4288,7 @@ body.light-theme .lightbox-nav:hover {
   .lightbox-prev {
     left: -60px;
   }
+
   .lightbox-next {
     right: -60px;
   }
@@ -4245,19 +4301,33 @@ body.light-theme .lightbox-nav:hover {
     bottom: -60px;
     transform: none;
   }
+
   .lightbox-next {
     right: 10px;
     top: auto;
     bottom: -60px;
     transform: none;
   }
+
   .lightbox-close {
     top: -55px;
     right: 10px;
   }
+
   .lightbox-caption {
     margin-top: 12px;
     font-size: 0.95rem;
     max-width: 95%;
   }
-}
+}
+
+/* Custom Content Alignment Rules */
+body .mv-card p,
+body .dept-about-text p,
+body .feature-card p,
+body .resp-item-about p,
+body .apply-info-card p,
+body .hod-bio,
+body .hero-subtitle {
+  text-align: justify !important;
+}

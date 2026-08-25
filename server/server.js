@@ -232,6 +232,19 @@ app.get('/api/gallery', async (req, res) => {
   }
 });
 
+// Endpoint to serve EmailJS configuration from environment variables (.env)
+app.get('/api/email-config', (req, res) => {
+  const serviceId = getEnv('SERVICE_ID') || '';
+  const templateId = getEnv('TEMPLATE_ID') || '';
+  const publicKey = getEnv('PUBLIC_KEY') || '';
+
+  res.json({
+    serviceId,
+    templateId,
+    publicKey
+  });
+});
+
 // Start Server
 app.listen(PORT, () => {
   console.log(`CS-CATALYST Gallery Server running on http://localhost:${PORT}`);
