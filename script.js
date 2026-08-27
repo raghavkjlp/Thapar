@@ -84,12 +84,94 @@ function initNavigation() {
   const navMenu = document.getElementById('navMenu');
   if (!hamburger || !navMenu) return;
 
-  hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
+  const originalParent = navMenu.parentElement; // Store original location in desktop navbar
+
+  // Create dark overlay element attached directly to body
+  let overlay = document.querySelector('.nav-overlay');
+  if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.className = 'nav-overlay';
+    document.body.appendChild(overlay);
+  }
+
+  // Inject top header bar (Logo + Close X) inside drawer
+  if (!navMenu.querySelector('.nav-drawer-header')) {
+    const drawerHeader = document.createElement('div');
+    drawerHeader.className = 'nav-drawer-header';
+    drawerHeader.innerHTML = `
+      <div class="nav-drawer-logo" style="display:flex;align-items:center;gap:10px;">
+        <img src="images/logo.png" alt="CS-CATALYST" style="width:34px;height:34px;border-radius:50%;">
+        <div>
+          <div style="font-family:var(--font-heading);font-weight:800;font-size:0.95rem;color:#111827;line-height:1.2;">CS-CATALYST</div>
+          <div style="font-size:0.65rem;color:#6b7280;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;">CSE Dept · TIET Patiala</div>
+        </div>
+      </div>
+      <button class="nav-drawer-close" aria-label="Close menu">&times;</button>
+    `;
+    navMenu.prepend(drawerHeader);
+
+    const closeBtn = drawerHeader.querySelector('.nav-drawer-close');
+    closeBtn.addEventListener('click', closeDrawer);
+  }
+
+  function openDrawer() {
+    if (window.innerWidth <= 1024 && navMenu.parentElement !== document.body) {
+      document.body.appendChild(navMenu);
+    }
+    navMenu.classList.add('active');
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeDrawer() {
+    navMenu.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  function restoreDesktopNav() {
+    closeDrawer();
+    if (originalParent && navMenu.parentElement !== originalParent) {
+      originalParent.appendChild(navMenu);
+    }
+  }
+
+  // Open/Close toggle on hamburger click
+  hamburger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (navMenu.classList.contains('active')) {
+      closeDrawer();
+    } else {
+      openDrawer();
+    }
   });
+
+  // Close on link click
   navMenu.querySelectorAll('.nav-link').forEach(l => {
-    l.addEventListener('click', () => navMenu.classList.remove('active'));
+    l.addEventListener('click', closeDrawer);
   });
+
+  // Close on overlay click
+  overlay.addEventListener('click', closeDrawer);
+
+  // Restore desktop nav if resized above mobile breakpoint
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 1024) {
+      restoreDesktopNav();
+    }
+  });
+
+  // Handle transparent to white sticky navbar on scroll
+  const navbar = document.getElementById('navbar');
+  if (navbar) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -113,6 +195,7 @@ function injectFooter() {
       <div class="footer-grid">
         <div class="footer-col brand-col">
           <div class="footer-brand">
+            <img src="images/logo.png" alt="CS-CATALYST Logo" class="footer-logo" style="width:48px;height:48px;object-fit:contain;">
             <div><h3>CS-CATALYST</h3><p>CSE Dept · TIET Patiala</p></div>
           </div>
           <p class="footer-about">The official Computer Science &amp; Engineering departmental society at Thapar Institute of Engineering &amp; Technology, Patiala, driving FDPs, STCs, quantum workshops, and student leadership.</p>
