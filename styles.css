@@ -494,13 +494,13 @@ textarea {
 }
 
 .logo-img {
-  width: 42px;
-  height: 42px;
+  width: 72px;
+  height: 72px;
   object-fit: contain;
   background: #ffffff;
   border-radius: 50%;
-  padding: 4px;
-  box-shadow: 0 2px 12px rgba(255, 255, 255, 0.3);
+  padding: 6px;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.06);
   transition: transform var(--transition-fast);
 }
 
@@ -854,27 +854,42 @@ body.light-theme .hero-header-wrapper .navbar-header.scrolled .hamburger span {
   max-width: 500px;
   object-fit: contain;
 
-  /* Clean white presentation */
-  background: transparent;
-  padding: 14px 24px;
-  border-radius: 18px;
+  background: #f8f5f0;
+  padding: 18px 5px;
+  border-radius: 30px;
 
   box-shadow:
-    0 12px 35px rgba(0, 0, 0, 0.25),
-    0 0 25px rgba(255, 255, 255, 0.12);
+    0 15px 40px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(255, 255, 255, 0.4);
 
-  animation: none;
+  animation: logoFloat 4s ease-in-out infinite;
+}
+
+@keyframes logoFloat {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .hero-brand-img.thapar-img {
   position: absolute;
-  right: 650px;
+  right: 10%;
   top: 10%;
   transform: translateY(-50%);
   height: 80px;
   width: auto;
-  opacity: 110;
+  opacity: 1;
   transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dance-animation {
+  animation: dance 3s ease-in-out infinite;
 }
 
 .hero-brand-img.thapar-img:hover {
@@ -965,16 +980,16 @@ body.light-theme .hero-header-wrapper .navbar-header.scrolled .hamburger span {
 
 .btn-primary {
   background: var(--gradient-primary);
-  color: #080c14;
+  color: #ffffff;
 }
 
 .btn-glow {
-  box-shadow: 0 0 25px var(--accent-cyan-glow);
+  box-shadow: 0 0 25px rgba(220, 38, 38, 0.35);
 }
 
 .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 0 35px var(--accent-cyan-glow);
+  box-shadow: 0 0 35px rgba(220, 38, 38, 0.45);
 }
 
 .btn-secondary {
@@ -1384,8 +1399,9 @@ body.light-theme .hero-header-wrapper .navbar-header.scrolled .hamburger span {
 .qbit-quick-meta {
   display: flex;
   gap: 24px;
-  background: rgba(0, 0, 0, 0.3);
-  border: 1px solid var(--border-glass);
+  background: #ffffff;
+  border: 1px solid rgba(220, 38, 38, 0.2);
+  box-shadow: 0 4px 16px rgba(220, 38, 38, 0.1);
   padding: 16px 20px;
   border-radius: var(--radius-md);
   margin-bottom: 28px;
@@ -2670,6 +2686,22 @@ textarea:focus {
    12. Responsive Breakpoints
    -------------------------------------------------------------------------- */
 @media (max-width: 1024px) {
+  .logo-img {
+    width: 56px;
+    height: 56px;
+  }
+
+  .hero-brand-img:not(.thapar-img) {
+    height: 140px;
+    max-width: 100%;
+  }
+
+  .hero-brand-img.thapar-img {
+    height: 50px;
+    right: 5%;
+    top: -10%;
+  }
+
   .hero-container {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -2806,10 +2838,10 @@ textarea:focus {
   .nav-menu .nav-link.active,
   .hero-header-wrapper .nav-menu .nav-link.active,
   body.light-theme .hero-header-wrapper .nav-menu .nav-link.active {
-    background: linear-gradient(135deg, #78374b, #642d78) !important;
+    background: linear-gradient(135deg, #b91c1c, #991b1b) !important;
     color: #ffffff !important;
     font-weight: 700 !important;
-    box-shadow: 0 4px 14px rgba(100, 45, 120, 0.35) !important;
+    box-shadow: 0 4px 14px rgba(185, 28, 28, 0.35) !important;
   }
 
   .nav-menu .nav-link.active i,
@@ -2820,8 +2852,8 @@ textarea:focus {
   .nav-menu .nav-link:hover:not(.active),
   .hero-header-wrapper .nav-menu .nav-link:hover:not(.active),
   body.light-theme .hero-header-wrapper .nav-menu .nav-link:hover:not(.active) {
-    background: #f3f4f6 !important;
-    color: #78374b !important;
+    background: #fef2f2 !important;
+    color: #b91c1c !important;
   }
 
   .nav-menu .nav-link i {
@@ -2836,7 +2868,7 @@ textarea:focus {
   .nav-menu .apply-btn-nav.active,
   .hero-header-wrapper .nav-menu .apply-btn-nav,
   body.light-theme .hero-header-wrapper .nav-menu .apply-btn-nav {
-    background: linear-gradient(135deg, #642d78, #4c1d95) !important;
+    background: linear-gradient(135deg, #dc2626, #b91c1c) !important;
     color: #ffffff !important;
     margin-top: 16px !important;
     padding: 14px 20px !important;
@@ -2844,7 +2876,7 @@ textarea:focus {
     justify-content: center !important;
     width: 100% !important;
     font-weight: 700 !important;
-    box-shadow: 0 4px 15px rgba(76, 29, 149, 0.35) !important;
+    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.35) !important;
   }
 
   .hamburger {
