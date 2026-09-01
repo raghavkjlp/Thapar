@@ -57,7 +57,8 @@
       <div class="container page-hero-container">
         <h1 class="page-hero-title">Gallery</h1>
         <p class="page-hero-sub">The official departmental society driving academic excellence, technical growth, and
-          student leadership in the CSE Department of Thapar Institute of Engineering &amp; Technology (TIET), Patiala.</p>
+          student leadership in the CSE Department of Thapar Institute of Engineering &amp; Technology (TIET), Patiala.
+        </p>
       </div>
     </section>
   </div>
@@ -219,6 +220,42 @@
             thumbnailUrl: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&q=80&w=400"
           }
         ]
+      },
+      {
+        id: "green-ai",
+        title: "Green Intelligence: Sustainable AI Workshop",
+        images: [
+          {
+            id: "gi1",
+            name: "Green Intelligence: Responsible & Sustainable AI Workshop Poster",
+            url: "images/GreenIntelligenceResponsible&SustainableAI.jpeg",
+            thumbnailUrl: "images/GreenIntelligenceResponsible&SustainableAI.jpeg"
+          }
+        ]
+      },
+      {
+        id: "drone-bootcamp-2025",
+        title: "Drone Technology Bootcamp 2025",
+        images: [
+          {
+            id: "db1",
+            name: "Exploring Drone Technology, Assembly & Flying Bootcamp Poster",
+            url: "images/dronebootcamp.jpeg",
+            thumbnailUrl: "images/dronebootcamp.jpeg"
+          }
+        ]
+      },
+      {
+        id: "quantum-fdp-2025",
+        title: "Quantum Computing FDP 2025",
+        images: [
+          {
+            id: "qf1",
+            name: "Hybrid Faculty Development Programme on Quantum Computing Poster",
+            url: "images/quantumnov.png",
+            thumbnailUrl: "images/quantumnov.png"
+          }
+        ]
       }
     ];
 
@@ -245,6 +282,9 @@
         'q-bit': 'Q-BIT Quantum Computing Workshop 2026',
         'drone': 'DRONE-FIT: Drone Flight & Industrial Training',
         'drone-fit': 'DRONE-FIT: Drone Flight & Industrial Training',
+        'green-ai': 'Green Intelligence: Sustainable AI Workshop',
+        'drone-bootcamp-2025': 'Drone Technology Bootcamp 2025',
+        'quantum-fdp-2025': 'Quantum Computing FDP 2025',
         'cloud-fdp': 'Cloud Infrastructure & HPC FDP',
         'stc-crypto': 'Modern Cryptography STC',
         'open-day': 'CSE Department Open Day Expo',
@@ -258,29 +298,17 @@
       }));
 
       const filterTabsContainer = document.getElementById('albumFilterTabs');
-      const gridContainer = document.getElementById('galleryGrid');
+      if (!filterTabsContainer) return;
 
-      // 1. Render Album Tabs (clear old dynamic ones first)
+      // 1. Render Album Tabs (All Albums tab + individual event tabs)
       const staticTabs = `<button class="filter-btn active" data-album="all" onclick="filterAlbum('all')">All Albums</button>`;
       const dynamicTabs = currentAlbums.map(album =>
-        `<button class="filter-btn" data-album="${album.id}" onclick="filterAlbum('${album.id}')">${album.title.split(':')[0]}</button>`
+        `<button class="filter-btn" data-album="${album.id}" onclick="filterAlbum('${album.id}')">${(album.title || album.id).split(':')[0]}</button>`
       ).join('');
       filterTabsContainer.innerHTML = staticTabs + dynamicTabs;
 
-      // 2. Accumulate all images for the "All" view
-      filteredImages = [];
-      currentAlbums.forEach(album => {
-        album.images.forEach(img => {
-          filteredImages.push({
-            ...img,
-            albumId: album.id,
-            albumTitle: album.title
-          });
-        });
-      });
-
-      // 3. Render Grid Items
-      renderGrid(filteredImages);
+      // 2. Display all images by default
+      filterAlbum('all');
     }
 
     // Render Grid Items
@@ -326,20 +354,22 @@
       if (albumId === 'all') {
         filteredImages = [];
         currentAlbums.forEach(album => {
-          album.images.forEach(img => {
-            filteredImages.push({
-              ...img,
-              albumId: album.id,
-              albumTitle: album.title
+          if (album.images && Array.isArray(album.images)) {
+            album.images.forEach(img => {
+              filteredImages.push({
+                ...img,
+                albumId: album.id,
+                albumTitle: album.title || album.id
+              });
             });
-          });
+          }
         });
       } else {
         const selected = currentAlbums.find(a => a.id === albumId);
-        filteredImages = selected ? selected.images.map(img => ({
+        filteredImages = (selected && Array.isArray(selected.images)) ? selected.images.map(img => ({
           ...img,
           albumId: selected.id,
-          albumTitle: selected.title
+          albumTitle: selected.title || selected.id
         })) : [];
       }
 

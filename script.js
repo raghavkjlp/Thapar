@@ -390,6 +390,45 @@ const eventDatabase = {
       'Safety, Regulations & Best Practices'
     ]
   },
+  'green-ai-workshop': {
+    title: 'One-Day Workshop on Green Intelligence: Responsible and Sustainable Artificial Intelligence',
+    category: 'COMPLETED WORKSHOP',
+    meta: 'February 06, 2026 · LT-202, TIET Patiala',
+    desc: 'One-Day Workshop organized by the Department of Computer Science & Engineering, TIET Patiala, in collaboration with CEEDS (Council for Entrepreneurship Enablement, Decarbonization & Sustainability). The workshop focused on sustainable AI models, responsible machine learning practices, decarbonization, and alignment with UN Sustainable Development Goals.',
+    highlights: [
+      'Green Intelligence & Sustainable AI Architecture',
+      'Responsible AI & Decarbonization Strategies',
+      'UN SDGs Alignment: SDG 3, 7, 13 & 15',
+      'Joint Collaboration between CSE TIET & CEEDS'
+    ]
+  },
+  'drone-bootcamp-2025': {
+    title: 'Five-Day Bootcamp on Exploring Drone Technology, Assembly & Flying',
+    category: 'COMPLETED BOOTCAMP',
+    meta: 'August 04–08, 2025 · TIET Patiala (Offline)',
+    desc: '5-Day intensive bootcamp organized by the Department of Computer Science and Engineering, TIET Patiala in collaboration with Dr. B. R. Ambedkar National Institute of Technology Jalandhar (NITJ), sponsored by TIET & NITJ under MeitY, Govt. of India. The program equipped participants with hands-on knowledge in drone hardware assembly, flight operations, autonomous navigation systems, AI/ML integration, and real-time sensor data analysis.',
+    highlights: [
+      'Drone Hardware Components & Assembly',
+      'Autonomous Navigation & Flight Operations',
+      'AI & Machine Learning Integration',
+      'Applications in Agriculture & Surveillance',
+      'Cyber Security & Regulations for Drones',
+      'Jointly Organized with NIT Jalandhar (MeitY Sponsored)'
+    ]
+  },
+  'quantum-fdp-2025': {
+    title: 'Hybrid Faculty Development Programme on Quantum Computing',
+    category: 'COMPLETED FDP',
+    meta: 'November 17–22, 2025 · Hybrid (TIET Patiala & IIITDM Jabalpur)',
+    desc: '6-Day Faculty Development Programme jointly organized by Thapar Institute of Engineering & Technology (TIET), Patiala, Punjab and Electronics & ICT Academy, IIITDM Jabalpur under the Ministry of Electronics and Information Technology (MeitY), Government of India (Digital India Initiative). The program empowered educators and researchers with quantum mechanics, superposition, Qiskit circuits, quantum algorithms, and post-quantum cryptography.',
+    highlights: [
+      'Quantum Computing Fundamentals & Qubit Mechanics',
+      'Qiskit Circuit Design & Quantum Algorithms',
+      'Joint Initiative with E&ICT Academy IIITDM Jabalpur',
+      'MeitY & Digital India Government Initiative',
+      'Post-Quantum Cryptography & Hardware Architecture'
+    ]
+  },
   'cloud-fdp': { title: 'National FDP on Cloud Infrastructure & HPC Architectures', category: 'COMPLETED FDP', meta: 'May 14–18, 2026 · CSE Computer Lab 3', desc: '5-Day Faculty Development Program delivered by leading HPC researchers. Topics: Kubernetes, GPU acceleration, parallel MPI, cloud cost optimization.', highlights: ['50+ Faculty Delegates', '10 Lab Practicals', 'IBM & NVIDIA Guest Speakers'] },
   'llm-talk': { title: 'Expert Seminar: Scaling Large Language Models', category: 'UPCOMING TALK', meta: 'Oct 12, 2026 · TIET Auditorium', desc: 'Keynote on LLM alignment, LoRA/QLoRA fine-tuning, RAG evaluation benchmarks, and ethical AI deployment at scale.', highlights: ['AI Industry Lead Keynote', 'Live Q&A Session', 'Certificate of Participation'] },
   'stc-crypto': { title: 'STC: Modern Cryptography & Zero-Trust Security', category: 'COMPLETED STC', meta: 'Mar 02–06, 2026 · Cyber Security Lab', desc: 'Hands-on STC on post-quantum cryptographic primitives, zero-knowledge proofs, blockchain privacy, and network forensics.', highlights: ['Hands-on CTF Challenge', 'ZK Proof Demos', '100% Completion Rate'] },
@@ -403,17 +442,102 @@ const eventDatabase = {
 function showEventDetails(id) {
   const d = eventDatabase[id];
   if (!d) return;
-  document.getElementById('modalCategoryPill').innerText = d.category;
+  const modal = document.getElementById('eventDetailModal');
+  if (!modal) return;
+
+  const pill = document.getElementById('modalCategoryPill');
+  if (pill) {
+    pill.innerText = d.category;
+    if (d.category.toLowerCase().includes('completed')) {
+      pill.className = 'category-pill completed';
+    } else {
+      pill.className = 'category-pill upcoming';
+    }
+  }
+
   document.getElementById('modalEventTitle').innerText = d.title;
-  document.getElementById('modalEventMeta').innerHTML = `<i class="fa-solid fa-calendar"></i> ${d.meta}`;
+  document.getElementById('modalEventMeta').innerHTML = `<i class="fa-solid fa-calendar-days"></i> ${d.meta}`;
   document.getElementById('modalEventDesc').innerText = d.desc;
-  document.getElementById('modalHighlights').innerHTML = '<h4 style="margin-bottom:12px"><i class="fa-solid fa-star" style="color:#fbbf24"></i> Key Highlights</h4><ul style="display:flex;flex-direction:column;gap:8px">' +
-    d.highlights.map(h => `<li style="display:flex;gap:8px;font-size:0.9rem;color:#94a3b8"><i class="fa-solid fa-check" style="color:#00f2fe;margin-top:3px"></i>${h}</li>`).join('') + '</ul>';
-  document.getElementById('eventDetailModal')?.classList.add('active');
+  document.getElementById('modalHighlights').innerHTML = '<h4 style="margin-bottom:12px"><i class="fa-solid fa-star" style="color:#d97706"></i> Key Highlights</h4><ul style="display:flex;flex-direction:column;gap:10px">' +
+    d.highlights.map(h => `<li style="display:flex;gap:10px;font-size:0.92rem;color:var(--text-muted)"><i class="fa-solid fa-circle-check" style="color:var(--accent-cyan);margin-top:2px"></i><span>${h}</span></li>`).join('') + '</ul>';
+
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
 }
+
 function closeEventDetailModal() {
-  document.getElementById('eventDetailModal')?.classList.remove('active');
+  const modal = document.getElementById('eventDetailModal');
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
 }
+
+/* Poster Lightbox Viewer */
+function openPosterLightbox(src, title) {
+  let lightbox = document.getElementById('posterLightboxOverlay');
+  if (!lightbox) {
+    lightbox = document.createElement('div');
+    lightbox.id = 'posterLightboxOverlay';
+    lightbox.className = 'lightbox-overlay';
+    lightbox.innerHTML = `
+      <div class="lightbox-content">
+        <button class="lightbox-close" onclick="closePosterLightbox()">&times;</button>
+        <img src="" alt="" class="lightbox-img" id="posterLightboxImg">
+        <p class="lightbox-caption" id="posterLightboxCaption"></p>
+      </div>
+    `;
+    document.body.appendChild(lightbox);
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closePosterLightbox();
+    });
+  }
+
+  const img = document.getElementById('posterLightboxImg');
+  const cap = document.getElementById('posterLightboxCaption');
+  if (img) img.src = src;
+  if (cap) cap.innerText = title || 'Event Poster';
+
+  lightbox.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closePosterLightbox() {
+  const lightbox = document.getElementById('posterLightboxOverlay');
+  if (lightbox) {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+}
+
+// Setup Backdrop click & ESC listener for Event Details Modal and Poster Lightbox
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('eventDetailModal');
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeEventDetailModal();
+    });
+  }
+  
+  // Attach click to all .event-img-wrap elements across events page
+  document.querySelectorAll('.event-card').forEach(card => {
+    const wrap = card.querySelector('.event-img-wrap');
+    const img = wrap?.querySelector('img');
+    const title = card.querySelector('.event-title')?.innerText || 'Event Poster';
+    if (wrap && img) {
+      wrap.addEventListener('click', () => {
+        openPosterLightbox(img.src, title);
+      });
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeEventDetailModal();
+      closePosterLightbox();
+    }
+  });
+});
 
 /* --------------------------------------------------------------------------
    13. Toast Notification

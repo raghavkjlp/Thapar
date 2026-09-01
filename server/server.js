@@ -94,6 +94,42 @@ const mockGalleryData = [
     ]
   },
   {
+    id: "green-ai",
+    title: "Green Intelligence: Sustainable AI Workshop",
+    images: [
+      {
+        id: "gi1",
+        name: "Green Intelligence: Responsible & Sustainable AI Workshop Poster",
+        url: "images/GreenIntelligenceResponsible&SustainableAI.jpeg",
+        thumbnailUrl: "images/GreenIntelligenceResponsible&SustainableAI.jpeg"
+      }
+    ]
+  },
+  {
+    id: "drone-bootcamp-2025",
+    title: "Drone Technology Bootcamp 2025",
+    images: [
+      {
+        id: "db1",
+        name: "Exploring Drone Technology Bootcamp Poster",
+        url: "images/dronebootcamp.jpeg",
+        thumbnailUrl: "images/dronebootcamp.jpeg"
+      }
+    ]
+  },
+  {
+    id: "quantum-fdp-2025",
+    title: "Quantum Computing FDP 2025",
+    images: [
+      {
+        id: "qf1",
+        name: "Hybrid Quantum Computing FDP Poster",
+        url: "images/quantumnov.png",
+        thumbnailUrl: "images/quantum.png"
+      }
+    ]
+  },
+  {
     id: "open-day",
     title: "CSE Department Open Day Expo",
     images: [
@@ -129,7 +165,7 @@ const getEnv = (keyName) => {
 
   const directVal = process.env[keyName];
   if (directVal && !isPlaceholder(directVal)) return directVal.trim();
-  
+
   const lowerKey = keyName.toLowerCase();
   for (const envKey of Object.keys(process.env)) {
     const cleanEnvKey = envKey.toLowerCase().replace(/[-_\s]/g, '');
@@ -154,7 +190,7 @@ const isImageKitConfigured = () => {
   const pub = getPublicKey();
   const priv = getPrivateKey();
   const url = getUrlEndpoint();
-  
+
   return pub && priv && url;
 };
 
@@ -187,7 +223,7 @@ app.get('/api/gallery', async (req, res) => {
 
     // Group files by folder (event)
     const gallery = {};
-    
+
     files.forEach(file => {
       // Extract folder name from filePath (e.g. "/q-bit/image.jpg" -> "q-bit")
       const pathParts = file.filePath.split('/').filter(p => p);
@@ -211,6 +247,9 @@ app.get('/api/gallery', async (req, res) => {
         'q-bit': 'Q-BIT Quantum Computing Workshop 2026',
         'drone-fit': 'DRONE-FIT: Drone Flight & Industrial Training',
         'drone': 'DRONE-FIT: Drone Flight & Industrial Training',
+        'green-ai': 'Green Intelligence: Sustainable AI Workshop',
+        'drone-bootcamp-2025': 'Drone Technology Bootcamp 2025',
+        'quantum-fdp-2025': 'Quantum Computing FDP 2025',
         'cloud-fdp': 'Cloud Infrastructure & HPC FDP',
         'stc-crypto': 'Modern Cryptography STC',
         'open-day': 'CSE Department Open Day Expo',
