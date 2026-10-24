@@ -12,6 +12,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static(path.join(__dirname, '..')));
 
 // Mock gallery data for fallback or local demonstration when ImageKit keys are not configured yet
 const mockGalleryData = [

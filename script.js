@@ -34,7 +34,7 @@ function initCountdownTimer() {
   const sEl = document.getElementById('secs');
   if (!dEl) return;
 
-  const target = new Date('September 7, 2026 09:00:00').getTime();
+  const target = new Date('October 27, 2026 09:30:00').getTime();
 
   function update() {
     const diff = target - Date.now();
@@ -363,6 +363,13 @@ function toggleScheduleDrawer() {
   d.style.display = open ? 'none' : 'block';
   if (!open) d.scrollIntoView({ behavior: 'smooth' });
 }
+function toggleDroneScheduleDrawer() {
+  const d = document.getElementById('droneScheduleDrawer');
+  if (!d) return;
+  const open = d.style.display === 'block';
+  d.style.display = open ? 'none' : 'block';
+  if (!open) d.scrollIntoView({ behavior: 'smooth' });
+}
 function handleQbitRegister(e) {
   e.preventDefault();
   const name = document.getElementById('qbitName')?.value || 'Participant';
@@ -378,6 +385,36 @@ function handleQbitRegister(e) {
    12. Event Details Modal Database
    -------------------------------------------------------------------------- */
 const eventDatabase = {
+  'drone-bootcamp-3': {
+    title: 'BOOTCAMP 3.0: Drone Technology, Assembly & Flying',
+    category: 'UPCOMING BOOTCAMP',
+    meta: 'October 27–31, 2026 (5 Days) · 9:30 AM – 5:00 PM · Activity Space - 2, TIET, Patiala',
+    desc: '5-Day comprehensive hands-on bootcamp organized by Thapar Institute of Engineering & Technology (TIET). Learn, build, configure, and fly with real drone experience! Complete training covering fundamentals of drone & UAS technology, component integration, hands-on assembly, calibration & configuration, flight training & practical operations, mission planning, and emerging technologies.\n\nQuery Contact: 7986886900 (Raghav Garg, Student Coordinator)',
+    link: 'https://forms.gle/Fef9NBeRopztthju6',
+    highlights: [
+      'Fundamentals of Drone & UAS Technology',
+      'Drone Components & System Integration',
+      'Hands-on Drone Assembly',
+      'Calibration & Configuration',
+      'Flight Training & Practical Operations',
+      'Mission Planning & Applications',
+      'Exposure to Emerging Drone Technologies',
+      'Student Coordinator: Raghav Garg (7986886900)'
+    ]
+  },
+  'q-bit': {
+    title: 'Q-BIT @ TIET: 5-Day Training on Quantum Computing',
+    category: 'COMPLETED WORKSHOP',
+    meta: 'September 07–11, 2026 · Activity Space-2, TIET (Hybrid)',
+    desc: '5-Day hybrid training program covering quantum computing fundamentals, Qiskit circuits, algorithm labs, and real quantum platform access. Organized by the Department of Computer Science & Engineering, TIET Patiala in collaboration with DigiToad Technologies.',
+    highlights: [
+      'Fundamentals of Quantum Computing & Bloch Sphere Representation',
+      'Qiskit Circuit Design & Quantum Algorithms (Grover & Shor)',
+      'Hands-on Access to Real Quantum Platforms & IBM Qiskit Labs',
+      'Special Industry Sessions with DigiToad Technologies',
+      'Project Showcase, Valedictory & Certificate Distribution'
+    ]
+  },
   'drone-fdp': {
     title: 'DRONE-FIT: Drone Flight & Industrial Training',
     category: 'COMPLETED TRAINING',
@@ -460,6 +497,18 @@ function showEventDetails(id) {
   document.getElementById('modalEventDesc').innerText = d.desc;
   document.getElementById('modalHighlights').innerHTML = '<h4 style="margin-bottom:12px"><i class="fa-solid fa-star" style="color:#d97706"></i> Key Highlights</h4><ul style="display:flex;flex-direction:column;gap:10px">' +
     d.highlights.map(h => `<li style="display:flex;gap:10px;font-size:0.92rem;color:var(--text-muted)"><i class="fa-solid fa-circle-check" style="color:var(--accent-cyan);margin-top:2px"></i><span>${h}</span></li>`).join('') + '</ul>';
+
+  const footerEl = modal.querySelector('.modal-footer');
+  if (footerEl) {
+    if (d.link) {
+      footerEl.innerHTML = `
+        <a href="${d.link}" target="_blank" class="btn btn-primary btn-glow" style="background: linear-gradient(135deg, #ff6b00 0%, #ea580c 100%);"><i class="fa-solid fa-paper-plane"></i> Register Now (Google Form)</a>
+        <button class="btn btn-secondary" onclick="closeEventDetailModal()">Close</button>
+      `;
+    } else {
+      footerEl.innerHTML = `<button class="btn btn-secondary" onclick="closeEventDetailModal()">Close</button>`;
+    }
+  }
 
   modal.classList.add('active');
   document.body.style.overflow = 'hidden';
