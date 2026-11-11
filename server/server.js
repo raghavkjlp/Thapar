@@ -234,11 +234,18 @@ app.get('/api/gallery', async (req, res) => {
         gallery[folder] = [];
       }
 
+      const isVideoFile = (file.fileType === 'non-image') || (file.name && /\.(mp4|webm|mov|ogg)$/i.test(file.name));
+      const cleanName = file.name.split('.')[0].replace(/[-_]/g, ' ');
+      const displayName = isVideoFile && cleanName.toLowerCase().includes('whatsapp video')
+        ? 'Participant Feedback Video'
+        : cleanName;
+
       gallery[folder].push({
         id: file.fileId,
-        name: file.name.split('.')[0].replace(/[-_]/g, ' '),
+        name: displayName,
         url: file.url,
-        thumbnailUrl: file.thumbnailUrl || file.url
+        thumbnailUrl: file.thumbnailUrl || file.url,
+        isVideo: isVideoFile
       });
     });
 
@@ -254,7 +261,7 @@ app.get('/api/gallery', async (req, res) => {
         'cloud-fdp': 'Cloud Infrastructure & HPC FDP',
         'stc-crypto': 'Modern Cryptography STC',
         'open-day': 'CSE Department Open Day Expo',
-        'general': 'CS-CATALYST Activities'
+        'general': 'CS-CATALYST Activities & Feedback'
       };
 
       return {

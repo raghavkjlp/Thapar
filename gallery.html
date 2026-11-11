@@ -97,6 +97,7 @@
       </button>
 
       <img src="" alt="" class="lightbox-img" id="lightboxImg">
+      <video controls playsinline class="lightbox-video" id="lightboxVideo" style="display: none;"></video>
 
       <button class="lightbox-nav lightbox-next" id="lightboxNextBtn" aria-label="Next image">
         <i class="fa-solid fa-chevron-right"></i>
@@ -311,6 +312,12 @@
       filterAlbum('all');
     }
 
+    function isVideo(url) {
+      if (!url) return false;
+      const clean = url.split('?')[0].toLowerCase();
+      return clean.endsWith('.mp4') || clean.endsWith('.webm') || clean.endsWith('.mov') || clean.endsWith('.ogg');
+    }
+
     // Render Grid Items
     function renderGrid(imagesList) {
       const gridContainer = document.getElementById('galleryGrid');
@@ -324,18 +331,32 @@
         return;
       }
 
-      gridContainer.innerHTML = imagesList.map((img, index) => `
-        <div class="gallery-item" onclick="openLightbox(${index})">
+      gridContainer.innerHTML = imagesList.map((img, index) => {
+        const isVid = isVideo(img.url || img.thumbnailUrl);
+        const displayName = (img.name && img.name.toLowerCase().includes('whatsapp video'))
+          ? 'Participant Feedback Video'
+          : img.name;
+
+        return `
+        <div class="gallery-item ${isVid ? 'gallery-item-video' : ''}" onclick="openLightbox(${index})">
           <div class="gallery-img-container">
-            <img src="${img.thumbnailUrl}" alt="${img.name}" class="gallery-img" loading="lazy">
+            ${isVid ? `
+              <video class="gallery-img gallery-video-element" muted playsinline preload="metadata">
+                <source src="${img.url}#t=0.5" type="video/mp4">
+              </video>
+              <div class="gallery-video-badge"><i class="fa-solid fa-circle-play"></i> Video</div>
+            ` : `
+              <img src="${img.thumbnailUrl}" alt="${displayName}" class="gallery-img" loading="lazy">
+            `}
             <div class="gallery-overlay">
-              <div class="gallery-overlay-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-              <h4 class="gallery-caption">${img.name}</h4>
+              <div class="gallery-overlay-icon"><i class="fa-solid ${isVid ? 'fa-play' : 'fa-magnifying-glass-plus'}"></i></div>
+              <h4 class="gallery-caption">${displayName}</h4>
               <span class="gallery-album-tag">${img.albumTitle.split(':')[0]}</span>
             </div>
           </div>
         </div>
-      `).join('');
+      `;
+      }).join('');
     }
 
     // Filter Album onClick
@@ -379,17 +400,43 @@
     // Lightbox Functionality
     const lightbox = document.getElementById('galleryLightbox');
     const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxVideo = document.getElementById('lightboxVideo');
     const lightboxCaption = document.getElementById('lightboxCaption');
     const lightboxAlbumTag = document.getElementById('lightboxAlbumTag');
+
+    function updateLightboxMedia(imgData) {
+      if (!imgData) return;
+      const isVid = isVideo(imgData.url);
+      const displayName = (imgData.name && imgData.name.toLowerCase().includes('whatsapp video'))
+        ? 'Participant Feedback Video'
+        : imgData.name;
+
+      if (isVid) {
+        lightboxImg.style.display = 'none';
+        lightboxImg.src = '';
+        lightboxVideo.style.display = 'block';
+        lightboxVideo.src = imgData.url;
+        lightboxVideo.play().catch(() => {});
+      } else {
+        if (lightboxVideo) {
+          lightboxVideo.pause();
+          lightboxVideo.src = '';
+          lightboxVideo.style.display = 'none';
+        }
+        lightboxImg.style.display = 'block';
+        lightboxImg.src = imgData.url;
+      }
+
+      lightboxCaption.innerText = displayName;
+      lightboxAlbumTag.innerText = imgData.albumTitle;
+    }
 
     function openLightbox(index) {
       currentImageIndex = index;
       const imgData = filteredImages[currentImageIndex];
       if (!imgData) return;
 
-      lightboxImg.src = imgData.url;
-      lightboxCaption.innerText = imgData.name;
-      lightboxAlbumTag.innerText = imgData.albumTitle;
+      updateLightboxMedia(imgData);
 
       lightbox.classList.add('active');
       document.body.style.overflow = 'hidden'; // Lock background scrolling
@@ -399,6 +446,11 @@
       lightbox.classList.remove('active');
       document.body.style.overflow = '';
       lightboxImg.src = ''; // Clear image src to stop load
+      if (lightboxVideo) {
+        lightboxVideo.pause();
+        lightboxVideo.src = '';
+        lightboxVideo.style.display = 'none';
+      }
     }
 
     function navigateLightbox(dir) {
@@ -414,13 +466,14 @@
       const imgData = filteredImages[currentImageIndex];
       if (!imgData) return;
 
-      // Soft transition or immediate swap
+      // Soft transition
       lightboxImg.style.opacity = '0.5';
+      if (lightboxVideo) lightboxVideo.style.opacity = '0.5';
+
       setTimeout(() => {
-        lightboxImg.src = imgData.url;
-        lightboxCaption.innerText = imgData.name;
-        lightboxAlbumTag.innerText = imgData.albumTitle;
+        updateLightboxMedia(imgData);
         lightboxImg.style.opacity = '1';
+        if (lightboxVideo) lightboxVideo.style.opacity = '1';
       }, 50);
     }
 
