@@ -387,10 +387,9 @@ function handleQbitRegister(e) {
 const eventDatabase = {
   'drone-bootcamp-3': {
     title: 'BOOTCAMP 3.0: Drone Technology, Assembly & Flying',
-    category: 'UPCOMING BOOTCAMP',
+    category: 'COMPLETED BOOTCAMP',
     meta: 'October 27–31, 2026 (5 Days) · 9:30 AM – 5:00 PM · Activity Space - 2, TIET, Patiala',
     desc: '5-Day comprehensive hands-on bootcamp organized by Thapar Institute of Engineering & Technology (TIET). Learn, build, configure, and fly with real drone experience! Complete training covering fundamentals of drone & UAS technology, component integration, hands-on assembly, calibration & configuration, flight training & practical operations, mission planning, and emerging technologies.\n\nQuery Contact: 7986886900 (Raghav Garg, Student Coordinator)',
-    link: 'https://forms.gle/Fef9NBeRopztthju6',
     highlights: [
       'Fundamentals of Drone & UAS Technology',
       'Drone Components & System Integration',
