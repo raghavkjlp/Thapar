@@ -218,9 +218,8 @@ function injectFooter() {
           <p class="contact-info"><i class="fa-solid fa-location-dot"></i> CSE Department, Thapar Institute, Patiala, Punjab — 147004</p>
           <p class="contact-info"><i class="fa-solid fa-envelope"></i> sandeep.verma@thapar.edu</p>
           <div class="social-icons" style="margin-top: 15px;">
-            <a href="https://linkedin.com/company/cs-catalyst-tiet" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="https://instagram.com/cs_catalyst_tiet" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://wa.me/919914374003" target="_blank" title="WhatsApp Support"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://www.linkedin.com/in/cs-catalyst-tiet-87a749446?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_ios" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/cs_catalyst.tiet" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
           </div>
         </div>
       </div>
